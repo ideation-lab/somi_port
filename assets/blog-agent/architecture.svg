@@ -1,0 +1,128 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset="1" stop-color="#f5f8ff"/>
+  </linearGradient>
+  <filter id="softShadow" x="-30%" y="-50%" width="160%" height="200%">
+    <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#94a3b8" flood-opacity="0.16"/>
+  </filter>
+  <marker id="arrowNeutral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+  </marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#22c55e"/>
+  </marker>
+  <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/>
+  </marker>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<text x="60" y="68" font-family="ui-sans-serif, -apple-system, system-ui" font-size="36" font-weight="800" fill="#0f172a">Blog Agent</text>
+<text x="60" y="100" font-family="ui-sans-serif" font-size="17" font-weight="600" fill="#475569">LangGraph + Retrieval-Augmented Blog Writing</text>
+<text x="60" y="124" font-family="ui-sans-serif" font-size="13" font-weight="500" fill="#64748b">Modulabs OSS Season 2 · 3 merged PRs by 1wos · LangChain v1 migration</text>
+<rect x="1300" y="58" width="240" height="32" rx="999" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="1420.0" y="78" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="700" fill="#2563eb">author: 1wos · PR #51 #54 #56</text>
+<rect x="361" y="230" width="217" height="26" rx="999" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+<text x="469.5" y="248" text-anchor="middle" font-family="ui-sans-serif" font-size="11" font-weight="700" fill="#15803d">PR #54 · INGESTION + KEYWORDS</text>
+<rect x="361" y="430" width="161" height="26" rx="999" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+<text x="441.5" y="448" text-anchor="middle" font-family="ui-sans-serif" font-size="11" font-weight="700" fill="#15803d">PR #56 · WEB RESEARCH</text>
+<rect x="135" y="270" width="200" height="80" rx="16" fill="#ffffff" stroke="#dbe7f3" stroke-width="1.0" filter="url(#softShadow)"/>
+<text x="235" y="304" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#0f172a">URL Content</text>
+<text x="235" y="328" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">Naver blog input</text>
+<rect x="361" y="270" width="200" height="80" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="461" y="304" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#15803d">FetchContent</text>
+<text x="461" y="328" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">BS4 → Playwright fallback</text>
+<rect x="587" y="270" width="200" height="80" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="687" y="304" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#15803d">Iframe Extract</text>
+<text x="687" y="328" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">Naver mainFrame</text>
+<rect x="813" y="270" width="200" height="80" rx="16" fill="#ffffff" stroke="#dbe7f3" stroke-width="1.0" filter="url(#softShadow)"/>
+<text x="913" y="304" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#0f172a">AnalyzeContent</text>
+<text x="913" y="328" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">content signal</text>
+<rect x="1039" y="270" width="200" height="80" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="1139" y="304" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#15803d">SuggestKeywords</text>
+<text x="1139" y="328" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">Korean keyword fix</text>
+<rect x="1265" y="270" width="200" height="80" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="1365" y="304" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#9a3412">HITL Gate</text>
+<text x="1365" y="328" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">interrupt_before</text>
+<rect x="135" y="470" width="200" height="80" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="235" y="504" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#9a3412">Selected Keywords</text>
+<text x="235" y="528" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">human approved</text>
+<rect x="361" y="470" width="200" height="80" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="461" y="504" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#15803d">TavilySearch</text>
+<text x="461" y="528" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">langchain-tavily</text>
+<rect x="587" y="470" width="200" height="80" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.4" filter="url(#softShadow)"/>
+<text x="687" y="504" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#15803d">Search Results</text>
+<text x="687" y="528" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">retrieved context</text>
+<rect x="813" y="470" width="200" height="80" rx="16" fill="#ffffff" stroke="#dbe7f3" stroke-width="1.0" filter="url(#softShadow)"/>
+<text x="913" y="504" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#0f172a">WriteBlog</text>
+<text x="913" y="528" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">context-aware draft</text>
+<rect x="1039" y="470" width="200" height="80" rx="16" fill="#ffffff" stroke="#dbe7f3" stroke-width="1.0" filter="url(#softShadow)"/>
+<text x="1139" y="504" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#0f172a">OptimizeSEO</text>
+<text x="1139" y="528" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">tags + title</text>
+<rect x="1265" y="470" width="200" height="80" rx="16" fill="#ffffff" stroke="#dbe7f3" stroke-width="1.0" filter="url(#softShadow)"/>
+<text x="1365" y="504" text-anchor="middle" font-family="ui-sans-serif" font-size="15" font-weight="700" fill="#0f172a">HTML Output</text>
+<text x="1365" y="528" text-anchor="middle" font-family="ui-sans-serif" font-size="12" font-weight="500" fill="#64748b">publishing artifact</text>
+<path d="M337 310 L355 310" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+<path d="M563 310 L581 310" fill="none" stroke="#22c55e" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowGreen)"/>
+<path d="M789 310 L807 310" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+<path d="M1015 310 L1033 310" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+<path d="M1241 310 L1259 310" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowOrange)"/>
+<path d="M337 510 L355 510" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowOrange)"/>
+<path d="M563 510 L581 510" fill="none" stroke="#22c55e" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowGreen)"/>
+<path d="M789 510 L807 510" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+<path d="M1015 510 L1033 510" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+<path d="M1241 510 L1259 510" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arrowNeutral)"/>
+<path d="M1365 350 C1365 410, 235 410, 235 464" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 6" marker-end="url(#arrowOrange)"/>
+<text x="155" y="606" font-family="ui-sans-serif" font-size="11" font-weight="800" fill="#64748b" letter-spacing="1.4">STACK</text>
+<rect x="155" y="620" width="200" height="80" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<g transform="translate(173, 646)"><svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M6.099 6H17.9C21.264 6 24 8.692 24 12s-2.736 6-6.099 6H6.1C2.736 18 0 15.308 0 12s2.736-6 6.099-6zm5.419 9.3c.148.154.367.146.561.106l.002.001c.09-.072-.038-.163-.16-.25-.074-.052-.145-.102-.166-.147.068-.08-.133-.265-.289-.408a1.52 1.52 0 01-.15-.148c-.11-.119-.155-.268-.2-.418-.03-.1-.06-.2-.11-.292-.304-.694-.653-1.383-1.143-1.97-.315-.39-.674-.74-1.033-1.09a19.384 19.384 0 01-.683-.688c-.226-.229-.362-.511-.499-.794-.114-.236-.228-.473-.396-.68-.507-.735-2.107-.936-2.342.104 0 .032-.01.052-.039.073-.13.094-.245.2-.342.327-.238.326-.274.877.022 1.17l.001-.019c.01-.147.02-.286.139-.391.228.193.576.262.841.117.32.45.422.995.525 1.54.085.456.17.912.382 1.316l.014.022c.124.203.25.41.41.587.059.089.178.184.297.279.157.125.314.25.329.359v.143c-.001.285-.002.58.184.813.103.205-.15.41-.352.385-.112.015-.233-.014-.354-.042-.165-.04-.329-.078-.462-.003-.038.04-.091.04-.145.042-.064.002-.129.004-.167.07-.008.019-.026.04-.045.063-.042.05-.087.105-.033.146l.015-.01c.082-.062.16-.12.27-.084-.014.08.039.102.092.123l.027.012a.344.344 0 01-.008.056c-.009.045-.017.088.018.127a.598.598 0 00.046-.054c.037-.046.073-.092.139-.11.144.19.289.111.471.013.206-.111.459-.248.81-.055-.135-.006-.255.01-.345.12-.023.024-.042.052-.002.084.207-.132.294-.085.375-.04.06.032.115.063.212.024l.07-.036c.155-.083.314-.166.499-.137-.139.039-.188.125-.242.218-.026.047-.054.095-.094.14-.021.021-.03.046-.007.08.29-.023.4-.095.548-.192.07-.046.15-.099.261-.154.124-.075.248-.027.368.02.13.05.255.098.371-.014.037-.033.083-.034.129-.034.016 0 .033 0 .05-.002-.037-.19-.24-.188-.448-.186-.24.003-.483.006-.475-.289.222-.149.224-.407.226-.651 0-.06 0-.117.005-.173.163.09.336.16.508.229.162.065.323.13.474.21.158.25.404.58.732.558.008-.026.016-.047.026-.073.019.004.039.008.059.014.086.02.178.044.223-.056zm6.429-2.829c.19.186.447.29.716.29.269 0 .526-.104.716-.29a.98.98 0 00.297-.7.98.98 0 00-.297-.7 1.024 1.024 0 00-1.08-.224l-.58-.831-.405.272.583.835a.978.978 0 00.05 1.348zm-1.817-2.69a1.03 1.03 0 001.056-.095.991.991 0 00.363-.507.97.97 0 00-.016-.62.994.994 0 00-.39-.488 1.028 1.028 0 00-1.298.14.987.987 0 00-.263.856.98.98 0 00.187.42c.095.125.218.225.36.294zm0 5.752a1.032 1.032 0 001.056-.095.991.991 0 00.363-.507.97.97 0 00-.016-.62.994.994 0 00-.39-.488 1.027 1.027 0 00-1.298.14.986.986 0 00-.263.856.98.98 0 00.187.42c.095.125.218.225.36.294zm.93-3.516v-.492h-1.55a.977.977 0 00-.217-.404l.584-.847-.425-.276-.583.847a1.023 1.023 0 00-1.047.23.973.973 0 00-.296.696c0 .261.107.512.296.696a1.023 1.023 0 001.047.23l.583.847.42-.276-.579-.847a.977.977 0 00.217-.404h1.55z" fill="#1C3C3C" fill-rule="evenodd"></path></svg></g>
+<text x="219" y="658" font-family="ui-sans-serif" font-size="14" font-weight="700" fill="#0f172a">LangGraph</text>
+<text x="219" y="678" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">orchestration</text>
+<rect x="373" y="620" width="200" height="80" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<g transform="translate(391, 646)"><svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.531 15.976a7.534 7.534 0 000-10.651L2.206 0A7.537 7.537 0 000 5.326c0 1.996.794 3.913 2.206 5.325l5.325 5.325zM18.674 16.469a7.535 7.535 0 00-10.65 0l5.325 5.325a7.536 7.536 0 0010.651 0l-5.326-5.325zM2.218 21.782a7.536 7.536 0 005.326 2.206v-7.531H.012c0 1.996.795 3.914 2.206 5.325zM20.73 8.595a7.534 7.534 0 00-10.651.001l5.325 5.326 5.326-5.327z" fill="#7FC8FF"></path></svg></g>
+<text x="437" y="658" font-family="ui-sans-serif" font-size="14" font-weight="700" fill="#0f172a">LangChain v1</text>
+<text x="437" y="678" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">runtime</text>
+<rect x="591" y="620" width="200" height="80" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<g transform="translate(609, 646)"><svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.1.503l2.824 4.47a1.078 1.078 0 01-.911 1.655H9.858v6.692h-1.67V0c.35 0 .7.168.912.503z" fill="#8FBCFA"></path><path d="M4.453 4.974L7.277.503A1.07 1.07 0 018.189 0v13.32a2.633 2.633 0 00-1.67.48V6.628H5.364c-.85 0-1.366-.936-.912-1.654z" fill="#468BFF"></path><path d="M17.041 17.74h-7.028c.423-.457.67-1.049.7-1.67h12.956c0 .35-.168.7-.502.912l-4.472 2.823a1.078 1.078 0 01-1.654-.911v-1.155z" fill="#FDBB11"></path><path d="M18.695 12.334l4.47 2.824c.336.212.503.562.503.912H10.713a2.65 2.65 0 00-.493-1.67h6.822v-1.154c0-.85.935-1.366 1.653-.912z" fill="#F6D785"></path><path d="M4.394 19.605L.316 23.683a1.07 1.07 0 001 .29l5.158-1.165A1.078 1.078 0 007 20.994l-.816-.816 3.073-3.074a1.61 1.61 0 000-2.276l-.042-.043-4.82 4.82z" fill="#FF9A9D"></path><path d="M3.822 17.817l3.073-3.074a1.61 1.61 0 012.277 0l.042.043-4.818 4.819-4.08 4.079a1.07 1.07 0 01-.289-1l1.165-5.158A1.078 1.078 0 013.006 17l.816.817z" fill="#FE363B"></path></svg></g>
+<text x="655" y="658" font-family="ui-sans-serif" font-size="14" font-weight="700" fill="#0f172a">Tavily</text>
+<text x="655" y="678" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">retrieval</text>
+<rect x="809" y="620" width="200" height="80" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<g transform="translate(827, 646)"><svg width="32" height="32" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M43.662 70.898c-4.124 1.17-6.829 3.222-8.611 5.272 1.707-1.494 3.993-2.865 7.077-3.739 3.155-.894 5.846-.888 8.069-.459v-1.739c-1.897-.173-4.072-.035-6.536.664ZM34.863 56.28l-15.314 4.035s.279.394.796.92l12.984-3.421s-.184 2.371-1.782 4.492c3.022-2.287 3.316-6.025 3.316-6.025Zm12.819 35.991C26.131 98.076 14.729 73.1 11.277 60.137 9.682 54.153 8.986 49.621 8.8 46.697a4.955 4.955 0 0 1 .011-.794c-1.118.068-1.653.649-1.544 2.328.186 2.923.882 7.454 2.477 13.44 3.45 12.961 14.854 37.937 36.405 32.132 4.691-1.264 8.215-3.565 10.86-6.504-2.438 2.202-5.49 3.937-9.327 4.972Zm4.05-51.276v1.534h8.453c-.173-.543-.348-1.032-.522-1.534h-7.932Z" fill="#2D4552"/><path d="M62.074 53.627c3.802 1.08 5.812 3.745 6.875 6.104l4.239 1.204s-.578-8.255-8.045-10.376c-6.985-1.985-11.284 3.881-11.807 4.64 2.032-1.448 4.999-2.633 8.738-1.572Zm33.741 6.142c-6.992-1.994-11.289 3.884-11.804 4.633 2.034-1.446 4.999-2.632 8.737-1.566 3.796 1.081 5.804 3.743 6.87 6.104l4.245 1.208s-.588-8.257-8.048-10.379Zm-4.211 21.766-35.261-9.858s.382 1.935 1.846 4.441l29.688 8.3c2.444-1.414 3.726-2.883 3.726-2.883Zm-24.446 21.218c-27.92-7.485-24.544-43.059-20.027-59.916 1.86-6.947 3.772-12.11 5.358-15.572-.946-.195-1.73.304-2.504 1.878-1.684 3.415-3.837 8.976-5.921 16.76-4.516 16.857-7.892 52.429 20.027 59.914 13.159 3.525 23.411-1.833 31.053-10.247-7.254 6.57-16.515 10.253-27.986 7.182Z" fill="#2D4552"/><path d="M51.732 83.935v-7.179l-19.945 5.656s1.474-8.563 11.876-11.514c3.155-.894 5.846-.888 8.069-.459V40.995h9.987c-1.087-3.36-2.139-5.947-3.023-7.744-1.461-2.975-2.96-1.003-6.361 1.842-2.396 2.001-8.45 6.271-17.561 8.726-9.111 2.457-16.476 1.805-19.55 1.273-4.357-.752-6.636-1.708-6.422 1.605.186 2.923.882 7.455 2.477 13.44 3.45 12.962 14.854 37.937 36.405 32.132 5.629-1.517 9.603-4.515 12.357-8.336h-8.309v.002Zm-32.185-23.62 15.316-4.035s-.446 5.892-6.188 7.405c-5.743 1.512-9.128-3.371-9.128-3.371Z" fill="#E2574C"/><path d="M109.372 41.336c-3.981.698-13.532 1.567-25.336-1.596-11.807-3.162-19.64-8.692-22.744-11.292-4.4-3.685-6.335-6.246-8.24-2.372-1.684 3.417-3.837 8.977-5.921 16.762-4.516 16.857-7.892 52.429 20.027 59.914 27.912 7.479 42.772-25.017 47.289-41.875 2.084-7.783 2.998-13.676 3.25-17.476.287-4.305-2.67-3.055-8.324-2.064ZM53.28 55.282s4.4-6.843 11.862-4.722c7.467 2.121 8.045 10.376 8.045 10.376L53.28 55.282Zm18.215 30.706c-13.125-3.845-15.15-14.311-15.15-14.311l35.259 9.858c0-.002-7.117 8.25-20.109 4.453Zm12.466-21.51s4.394-6.838 11.854-4.711c7.46 2.124 8.048 10.379 8.048 10.379l-19.902-5.668Z" fill="#2EAD33"/><path d="M44.762 78.733 31.787 82.41s1.41-8.029 10.968-11.212l-7.347-27.573-.635.193c-9.111 2.457-16.476 1.805-19.55 1.273-4.357-.751-6.636-1.708-6.422 1.606.186 2.923.882 7.454 2.477 13.44 3.45 12.961 14.854 37.937 36.405 32.132l.635-.199-3.555-13.337ZM19.548 60.315l15.316-4.035s-.446 5.892-6.188 7.405c-5.743 1.512-9.128-3.371-9.128-3.371Z" fill="#D65348"/><path d="m72.086 86.132-.594-.144c-13.125-3.844-15.15-14.311-15.15-14.311l18.182 5.082L84.15 39.77l-.116-.031c-11.807-3.162-19.64-8.692-22.744-11.292-4.4-3.685-6.335-6.246-8.24-2.372-1.682 3.417-3.836 8.977-5.92 16.762-4.516 16.857-7.892 52.429 20.027 59.914l.572.129 4.357-16.748Zm-18.807-30.85s4.4-6.843 11.862-4.722c7.467 2.121 8.045 10.376 8.045 10.376l-19.907-5.654Z" fill="#1D8D22"/><path d="m45.423 78.544-3.48.988c.822 4.634 2.271 9.082 4.545 13.011.396-.087.788-.163 1.192-.273a25.224 25.224 0 0 0 2.98-1.023c-2.541-3.771-4.222-8.114-5.237-12.702Zm-1.359-32.64c-1.788 6.674-3.388 16.28-2.948 25.915a20.061 20.061 0 0 1 2.546-.923l.644-.144c-.785-10.292.912-20.78 2.825-27.915a139.404 139.404 0 0 1 1.455-5.05 45.171 45.171 0 0 1-2.578 1.53 132.234 132.234 0 0 0-1.944 6.587Z" fill="#C04B41"/></svg></g>
+<text x="873" y="658" font-family="ui-sans-serif" font-size="14" font-weight="700" fill="#0f172a">Playwright</text>
+<text x="873" y="678" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">JS scraping</text>
+<rect x="1027" y="620" width="200" height="80" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<g transform="translate(1045, 646)"><svg width="32" height="32" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<rect width="256" height="256" rx="60" fill="#049789"/>
+<path d="M127.5 41C79.743 41 41 79.743 41 127.5C41 175.257 79.743 214 127.5 214C175.257 214 214 175.257 214 127.5C214 79.743 175.257 41 127.5 41ZM122.993 196.839V142.581H92.8306L136.167 58.1615V112.419H165.203L122.993 196.839Z" fill="white"/>
+</svg></g>
+<text x="1091" y="658" font-family="ui-sans-serif" font-size="14" font-weight="700" fill="#0f172a">FastAPI</text>
+<text x="1091" y="678" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">API layer</text>
+<rect x="1245" y="620" width="200" height="80" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<g transform="translate(1263, 646)"><svg width="32" height="32" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect width="256" height="256" fill="#F4F2ED" rx="60"/><path fill="url(#paint0_linear_2_56)" d="M127.279 29C76.5066 29 79.6772 51.018 79.6772 51.018L79.7338 73.8284H128.185V80.6772H60.4893C60.4893 80.6772 28 76.9926 28 128.222C28 179.452 56.3573 177.636 56.3573 177.636H73.2812V153.863C73.2812 153.863 72.369 125.506 101.186 125.506H149.24C149.24 125.506 176.239 125.942 176.239 99.4123V55.5461C176.239 55.5461 180.338 29 127.279 29ZM100.563 44.339C105.384 44.339 109.28 48.2351 109.28 53.0556C109.28 57.8761 105.384 61.7723 100.563 61.7723C95.7426 61.7723 91.8465 57.8761 91.8465 53.0556C91.8465 48.2351 95.7426 44.339 100.563 44.339Z"/><path fill="url(#paint1_linear_2_56)" d="M128.721 227.958C179.493 227.958 176.323 205.941 176.323 205.941L176.266 183.13H127.815V176.281H195.511C195.511 176.281 228 179.966 228 128.736C228 77.5062 199.643 79.323 199.643 79.323H182.719V103.096C182.719 103.096 183.631 131.453 154.814 131.453H106.76C106.76 131.453 79.7607 131.016 79.7607 157.546V201.412C79.7607 201.412 75.6615 227.958 128.721 227.958ZM155.437 212.619C150.616 212.619 146.72 208.723 146.72 203.903C146.72 199.082 150.616 195.186 155.437 195.186C160.257 195.186 164.154 199.082 164.154 203.903C164.154 208.723 160.257 212.619 155.437 212.619Z"/><defs><linearGradient id="paint0_linear_2_56" x1="47.22" x2="146.333" y1="46.896" y2="145.02" gradientUnits="userSpaceOnUse"><stop stop-color="#387EB8"/><stop offset="1" stop-color="#366994"/></linearGradient><linearGradient id="paint1_linear_2_56" x1="108.056" x2="214.492" y1="109.905" y2="210.522" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE052"/><stop offset="1" stop-color="#FFC331"/></linearGradient></defs></svg></g>
+<text x="1309" y="658" font-family="ui-sans-serif" font-size="14" font-weight="700" fill="#0f172a">Python</text>
+<text x="1309" y="678" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">backend</text>
+<rect x="52" y="740" width="320" height="110" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<rect x="70" y="758" width="64" height="24" rx="999" fill="#f1f5f9" stroke="#dbe7f3" stroke-width="1"/>
+<text x="102.0" y="774" text-anchor="middle" font-family="ui-sans-serif" font-size="11" font-weight="800" fill="#334155">PR #51</text>
+<text x="146" y="774" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#0f172a">LangChain v1 Migration</text>
+<text x="70" y="802" font-family="ui-sans-serif" font-size="11.5" font-weight="500" fill="#475569">init_chat_model · create_agent · v1 message types</text>
+<text x="354" y="832" text-anchor="end" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#15803d">+236 / −131</text>
+<rect x="388" y="740" width="320" height="110" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<rect x="406" y="758" width="64" height="24" rx="999" fill="#f1f5f9" stroke="#dbe7f3" stroke-width="1"/>
+<text x="438.0" y="774" text-anchor="middle" font-family="ui-sans-serif" font-size="11" font-weight="800" fill="#334155">PR #54</text>
+<text x="482" y="774" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#0f172a">Scraping + Keyword Fix</text>
+<text x="406" y="802" font-family="ui-sans-serif" font-size="11.5" font-weight="500" fill="#475569">BS4 → Playwright fallback · 36 chars → 7,198 chars</text>
+<text x="690" y="832" text-anchor="end" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#15803d">+202 / −30</text>
+<rect x="724" y="740" width="320" height="110" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<rect x="742" y="758" width="64" height="24" rx="999" fill="#f1f5f9" stroke="#dbe7f3" stroke-width="1"/>
+<text x="774.0" y="774" text-anchor="middle" font-family="ui-sans-serif" font-size="11" font-weight="800" fill="#334155">PR #56</text>
+<text x="818" y="774" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#0f172a">WebResearch Node</text>
+<text x="742" y="802" font-family="ui-sans-serif" font-size="11.5" font-weight="500" fill="#475569">TavilySearch retrieval into the writing pipeline</text>
+<text x="1026" y="832" text-anchor="end" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#15803d">+865 / −68</text>
+<rect x="1068" y="740" width="480" height="110" rx="14" fill="#ffffff" stroke="#dbe7f3" stroke-width="1" filter="url(#softShadow)"/>
+<text x="1090" y="774" font-family="ui-sans-serif" font-size="14" font-weight="800" fill="#0f172a">1wos contribution scope</text>
+<text x="1090" y="802" font-family="ui-sans-serif" font-size="11.5" font-weight="500" fill="#475569">Green-bordered nodes are PR-owned changes;</text>
+<text x="1090" y="822" font-family="ui-sans-serif" font-size="11.5" font-weight="500" fill="#475569">orange = HITL gate; gray = existing pipeline.</text>
+<text x="800" y="878" text-anchor="middle" font-family="ui-sans-serif" font-size="11" font-weight="500" fill="#64748b">Source: WithModulabs/blog-agent · graph.py · PR #51 · #54 · #56</text>
+</svg>

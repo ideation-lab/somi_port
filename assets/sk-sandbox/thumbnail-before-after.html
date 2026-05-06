@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LMS Sandbox Thumbnail</title>
+  <style>
+    :root {
+      --ink: #101525;
+      --muted: #5f6b7c;
+      --soft: #f6fbff;
+      --line: #dbe9f8;
+      --blue: #1167d8;
+      --blue-2: #45a7ff;
+      --cyan: #dcf6ff;
+      --yellow: #ffcf5a;
+      --green: #21b892;
+      --shadow: 0 26px 70px rgba(40, 71, 116, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #eef5ff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Apple SD Gothic Neo", sans-serif;
+    }
+
+    .canvas {
+      width: 1600px;
+      height: 900px;
+      position: relative;
+      overflow: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 12%, rgba(92, 184, 255, 0.16), transparent 30%),
+        radial-gradient(circle at 84% 14%, rgba(255, 207, 90, 0.15), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #fbfdff 48%, #f3f9ff 100%);
+    }
+
+    .canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17, 103, 216, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(17, 103, 216, 0.032) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.16));
+      pointer-events: none;
+    }
+
+    header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 36px;
+      padding: 38px 58px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border: 1px solid rgba(17, 103, 216, 0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.76);
+      color: #42607e;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 28px rgba(35, 78, 126, 0.06);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 13px 0 0 var(--blue), 26px 0 0 var(--yellow);
+      margin-right: 26px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 50px;
+      line-height: 1.02;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    h1 .accent { color: var(--blue); }
+
+    .subtitle {
+      margin: 12px 0 0;
+      max-width: 1060px;
+      color: #27364c;
+      font-size: 25px;
+      line-height: 1.28;
+      font-weight: 650;
+    }
+
+    .logo-card {
+      width: 154px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(17, 103, 216, 0.14);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.86);
+      box-shadow: 0 16px 38px rgba(25, 68, 122, 0.08);
+      flex: 0 0 auto;
+      margin-top: 4px;
+    }
+
+    .logo-card img {
+      width: 130px;
+      height: 46px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .stage {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 445px 345px 445px;
+      column-gap: 48px;
+      align-items: center;
+      padding: 34px 58px 0;
+    }
+
+    .stage-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      color: #66758a;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .stage-label::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: currentColor;
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.9);
+    }
+
+    .panel {
+      position: relative;
+      min-height: 390px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.86);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .panel-kicker {
+      position: absolute;
+      left: 25px;
+      top: 22px;
+      z-index: 2;
+      color: #8a9bb0;
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .before .panel {
+      border-style: dashed;
+      background: linear-gradient(135deg, rgba(248,250,252,0.92), rgba(255,255,255,0.78));
+    }
+
+    .after .panel {
+      border: 3px solid var(--blue);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239,248,255,0.96));
+      box-shadow: 0 32px 82px rgba(17, 103, 216, 0.20);
+    }
+
+    .browser-bar {
+      height: 48px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(17, 103, 216, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      margin-bottom: 22px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #5d6d82;
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: #94a3b8;
+    }
+
+    .dot:nth-child(2) { background: #b8c3d1; }
+    .dot:nth-child(3) { background: #d5dce6; }
+
+    .grid-old,
+    .grid-new {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 11px;
+    }
+
+    .grid-old .cell,
+    .grid-new .cell {
+      height: 43px;
+      border-radius: 10px;
+      border: 2px solid #7d8da4;
+      background: #aeb9c7;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+    }
+
+    .grid-old .cell.locked {
+      position: relative;
+      background: #c1c9d4;
+    }
+
+    .grid-old .cell.locked::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 15px;
+      height: 12px;
+      transform: translate(-50%, -20%);
+      border-radius: 3px;
+      background: #718096;
+    }
+
+    .grid-old .cell.locked::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 42%;
+      width: 13px;
+      height: 11px;
+      transform: translate(-50%, -70%);
+      border: 3px solid #718096;
+      border-bottom: 0;
+      border-radius: 9px 9px 0 0;
+    }
+
+    .grid-new .cell {
+      height: 48px;
+      border-color: var(--blue);
+      background: linear-gradient(135deg, #eef9ff 0%, #d2edff 100%);
+      box-shadow: 0 9px 18px rgba(17, 103, 216, 0.14);
+    }
+
+    .db-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 24px 8px 0;
+    }
+
+    .db {
+      width: 42px;
+      height: 42px;
+    }
+
+    .caption {
+      margin: 18px 4px 0;
+      color: #526071;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .rebuild {
+      align-self: stretch;
+      display: grid;
+      align-content: center;
+      gap: 16px;
+      position: relative;
+    }
+
+    .rebuild::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      right: -39px;
+      top: 50%;
+      height: 18px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(17,103,216,0), rgba(17,103,216,0.26), rgba(17,103,216,0));
+      filter: blur(6px);
+      z-index: -1;
+    }
+
+    .arrow {
+      position: absolute;
+      left: -38px;
+      right: -38px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-2));
+      z-index: -1;
+    }
+
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      transform: translateY(-50%);
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 22px solid var(--blue-2);
+    }
+
+    .step {
+      position: relative;
+      border: 1px solid rgba(17,103,216,0.22);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.98), rgba(247,251,255,0.94));
+      box-shadow: 0 18px 38px rgba(17, 73, 143, 0.11);
+      padding: 16px 18px 15px 20px;
+      overflow: hidden;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 15px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(17, 103, 216, 0.07);
+      transform: rotate(8deg);
+    }
+
+    .step small {
+      display: block;
+      color: var(--blue);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1.12;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step span {
+      display: block;
+      margin-top: 5px;
+      color: #506176;
+      font-size: 13px;
+      line-height: 1.28;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shards {
+      position: absolute;
+      left: 392px;
+      top: 168px;
+      display: grid;
+      grid-template-columns: repeat(3, 44px);
+      gap: 12px;
+      transform: rotate(-3deg);
+    }
+
+    .shard {
+      width: 44px;
+      height: 44px;
+      border: 3px solid var(--blue);
+      border-radius: 10px;
+      background: #d9efff;
+      box-shadow: 0 11px 22px rgba(17, 103, 216, 0.16);
+    }
+
+    .shard:nth-child(2n) {
+      border-top-color: var(--yellow);
+      border-right-color: var(--yellow);
+    }
+
+    .after-title {
+      position: absolute;
+      left: -3px;
+      top: -3px;
+      padding: 14px 24px;
+      border-radius: 27px 0 22px 0;
+      background: var(--blue);
+      color: #fff;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0.01em;
+    }
+
+    .device-icon {
+      position: absolute;
+      right: 21px;
+      top: 20px;
+      color: #17446e;
+    }
+
+    .after-content {
+      margin-top: 62px;
+    }
+
+    .metrics {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr 1.05fr 1fr;
+      gap: 18px;
+      padding: 34px 58px 0;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 74px;
+      padding: 14px 18px;
+      border: 1px solid rgba(17, 103, 216, 0.22);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(247,251,255,0.88));
+      box-shadow: 0 18px 42px rgba(31, 64, 105, 0.08);
+    }
+
+    .metric-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #eef7ff;
+      border: 1px solid rgba(17,103,216,0.22);
+      color: var(--blue);
+      flex: 0 0 auto;
+    }
+
+    .metric strong {
+      display: block;
+      color: #111827;
+      font-size: 17px;
+      line-height: 1.1;
+      font-weight: 950;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 3px;
+      color: #607083;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 750;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="canvas">
+    <header>
+      <div>
+        <div class="eyebrow">Enterprise LMS modernization</div>
+        <h1><span class="accent">LMS SANDBOX</span> — Local Dev Runtime</h1>
+        <p class="subtitle">Rebuilt a ~20-service mySUNI LXP stack into a team-owned local sandbox in ~3 weeks.</p>
+      </div>
+      <div class="logo-card">
+        <img src="./logo.jpeg" alt="mySUNI logo" />
+      </div>
+    </header>
+
+    <main class="stage">
+      <section class="before">
+        <div class="stage-label">Before · vendor-dependent</div>
+        <div class="panel">
+          <div class="panel-kicker">full source, blocked runtime</div>
+          <div class="browser-bar">
+            <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <span>closed enterprise stack</span>
+          </div>
+          <div class="grid-old">
+            <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell locked"></span>
+            <span class="cell"></span><span class="cell locked"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+            <span class="cell"></span><span class="cell"></span><span class="cell locked"></span><span class="cell"></span><span class="cell"></span>
+            <span class="cell"></span><span class="cell locked"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+            <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell locked"></span>
+            <span class="cell"></span><span class="cell"></span><span class="cell locked"></span><span class="cell"></span><span class="cell"></span>
+          </div>
+          <p class="caption">Source was available, but local development was blocked by private dependencies, network assumptions, and external release cycles.</p>
+        </div>
+        <div class="shards">
+          <span class="shard"></span><span class="shard"></span><span class="shard"></span>
+          <span class="shard"></span><span class="shard"></span><span class="shard"></span>
+          <span class="shard"></span><span class="shard"></span><span class="shard"></span>
+        </div>
+      </section>
+
+      <section class="rebuild">
+        <div class="arrow"></div>
+        <div class="step">
+          <small>01 · dependency deconstruction</small>
+          <strong>Nexus/private registry removed</strong>
+          <span>build.gradle rewiring · mavenLocal/public runtime</span>
+        </div>
+        <div class="step">
+          <small>02 · local infra runtime</small>
+          <strong>Docker Compose 5-stack</strong>
+          <span>MariaDB · MongoDB · Redis · Kafka · Zookeeper</span>
+        </div>
+        <div class="step">
+          <small>03 · auth & assets bypass</small>
+          <strong>Vite proxy + asset localization</strong>
+          <span>Envoy simulation · 1,083 frontend files localized</span>
+        </div>
+      </section>
+
+      <section class="after">
+        <div class="stage-label">After · team-owned runtime</div>
+        <div class="panel">
+          <div class="after-title">LMS SANDBOX</div>
+          <svg class="device-icon" width="66" height="42" viewBox="0 0 66 42" fill="none" aria-hidden="true">
+            <rect x="2" y="4" width="36" height="24" rx="4" stroke="currentColor" stroke-width="3"/>
+            <rect x="29" y="14" width="28" height="19" rx="3" stroke="currentColor" stroke-width="3"/>
+            <path d="M14 36H50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="after-content">
+            <div class="grid-new">
+              <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+              <span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+            </div>
+            <div class="db-row">
+              <svg class="db" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10" rx="16" ry="7" stroke="#173f63" stroke-width="3"/><path d="M8 10v25c0 4 7 8 16 8s16-4 16-8V10" stroke="#173f63" stroke-width="3"/><path d="M8 23c0 4 7 8 16 8s16-4 16-8" stroke="#173f63" stroke-width="3"/></svg>
+              <svg class="db" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10" rx="16" ry="7" stroke="#173f63" stroke-width="3"/><path d="M8 10v25c0 4 7 8 16 8s16-4 16-8V10" stroke="#173f63" stroke-width="3"/><path d="M8 23c0 4 7 8 16 8s16-4 16-8" stroke="#173f63" stroke-width="3"/></svg>
+              <svg class="db" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10" rx="16" ry="7" stroke="#173f63" stroke-width="3"/><path d="M8 10v25c0 4 7 8 16 8s16-4 16-8V10" stroke="#173f63" stroke-width="3"/><path d="M8 23c0 4 7 8 16 8s16-4 16-8" stroke="#173f63" stroke-width="3"/></svg>
+              <svg class="db" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10" rx="16" ry="7" stroke="#173f63" stroke-width="3"/><path d="M8 10v25c0 4 7 8 16 8s16-4 16-8V10" stroke="#173f63" stroke-width="3"/><path d="M8 23c0 4 7 8 16 8s16-4 16-8" stroke="#173f63" stroke-width="3"/></svg>
+            </div>
+            <p class="caption">Production-ready local cycle achieved: build, run, debug, and iterate without waiting on external deployment paths.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="metrics">
+      <div class="metric">
+        <div class="metric-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="m12 3 8 4-8 4-8-4 8-4Z" stroke="currentColor" stroke-width="2"/><path d="m4 12 8 4 8-4" stroke="currentColor" stroke-width="2"/><path d="m4 17 8 4 8-4" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <div><strong>~20 services</strong><span>full local build/run</span></div>
+      </div>
+      <div class="metric">
+        <div class="metric-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="2"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" stroke="currentColor" stroke-width="2"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <div><strong>DB 543MB seeded</strong><span>MariaDB 232MB + MongoDB 311MB</span></div>
+      </div>
+      <div class="metric">
+        <div class="metric-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></svg>
+        </div>
+        <div><strong>1,083 assets localized</strong><span>frontend CDN dependency removed</span></div>
+      </div>
+      <div class="metric">
+        <div class="metric-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 2v4M16 2v4M4 10h16M5 5h14v15H5z" stroke="currentColor" stroke-width="2"/><path d="M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div><strong>solo · ~3 weeks</strong><span>PoC to production-ready runtime</span></div>
+      </div>
+    </section>
+  </section>
+</body>
+</html>

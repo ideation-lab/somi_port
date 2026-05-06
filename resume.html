@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Somi Jeong — Resume</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>📄</text></svg>" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f1f1f4;
+    --bg-elevated: #f7f7f7;
+    --bg-elevated-2: #ededed;
+    --ink: #0f1115;
+    --ink-soft: #2a2e36;
+    --muted: #6b7280;
+    --line: #ececec;
+    --line-strong: #d6d6d6;
+    --accent: #1591d6;
+    --accent-soft: #e9f4fb;
+    --highlight: #b9a7ff;
+    --highlight-soft: #f3efff;
+    --chip-bg: #f6f6f7;
+    color-scheme: light;
+  }
+  [data-theme="dark"] {
+    --bg: #0f1115;
+    --bg-soft: #1c1c1e;
+    --bg-elevated: #1f2126;
+    --bg-elevated-2: #16181c;
+    --ink: #f5f6f8;
+    --ink-soft: #d0d2d8;
+    --muted: #9ca0aa;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --accent: #58a6ff;
+    --accent-soft: rgba(88, 166, 255, 0.14);
+    --highlight: #b9a7ff;
+    --highlight-soft: rgba(185, 167, 255, 0.12);
+    --chip-bg: #1c1e23;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; transition: background 220ms ease, color 220ms ease; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    transition: background 220ms ease, color 220ms ease;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+
+  /* TOPBAR */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: 1080px; margin: 0 auto; padding: 14px 32px;
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 18px;
+  }
+  .brand { display: flex; flex-direction: column; gap: 2px; cursor: pointer; }
+  .brand .name { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand .tag { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .nav { display: flex; gap: 26px; justify-content: center; font-size: 13px; }
+  .nav a { color: var(--ink-soft); transition: color 200ms ease; }
+  .nav a:hover { color: var(--accent); }
+  .tools { display: flex; gap: 10px; justify-content: flex-end; align-items: center; }
+  .icon-btn {
+    width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; color: var(--ink-soft); border: 1px solid transparent;
+    background: transparent; cursor: pointer;
+    transition: background 200ms ease, color 200ms ease;
+  }
+  .icon-btn:hover { background: var(--chip-bg); color: var(--accent); }
+  .icon-btn svg { width: 16px; height: 16px; }
+  .theme-icon-sun, .theme-icon-moon { display: none; }
+  [data-theme="light"] .theme-icon-moon { display: inline; }
+  [data-theme="dark"] .theme-icon-sun { display: inline; }
+
+  main {
+    max-width: 1080px; margin: 0 auto; padding: 50px 32px 100px;
+  }
+
+  /* ABOUT */
+  .about-hero {
+    text-align: center; padding: 12px 0 36px; border-bottom: 1px solid var(--line); margin-bottom: 40px;
+  }
+  .about-name {
+    font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
+    margin: 0 0 8px; line-height: 1.15;
+  }
+  .about-role {
+    font-size: 15px; color: var(--muted); font-weight: 400; margin: 0 0 14px;
+  }
+  .about-pitch {
+    max-width: 640px; margin: 0 auto 18px;
+    font-size: 14px; line-height: 1.7; color: var(--ink-soft);
+  }
+  .about-pitch em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .about-meta {
+    display: flex; justify-content: center; align-items: center; gap: 18px; flex-wrap: wrap;
+    color: var(--muted); font-size: 13px;
+  }
+  .about-meta-item { display: inline-flex; align-items: center; gap: 6px; }
+  .about-meta-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .focus-tags {
+    display: flex; gap: 7px; justify-content: center; flex-wrap: wrap; margin-top: 18px;
+  }
+  .focus-tag {
+    font-size: 11px; padding: 4px 10px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    font-weight: 600; letter-spacing: 0.04em;
+  }
+
+  /* SECTIONS */
+  section.resume-section { margin-bottom: 48px; }
+  .section-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 18px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); margin: 0;
+  }
+  .section-head .count { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+
+  /* EXPERIENCE — soyeong.kr style: clean reverse-chrono list with company logos */
+  .exp-list { display: flex; flex-direction: column; gap: 4px; }
+  .exp-entry {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .exp-entry:last-child { border-bottom: none; }
+  .exp-entry-head {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 10px;
+  }
+  .exp-entry-logo {
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+    font-size: 11px; font-weight: 700; color: var(--ink-soft);
+    letter-spacing: 0.02em; text-align: center; line-height: 1.1;
+    padding: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+  .exp-entry-logo img {
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .exp-entry-logo > span {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    padding: 4px;
+  }
+  .exp-entry-role {
+    font-size: 15px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em;
+    margin-bottom: 3px;
+  }
+  .exp-entry-company {
+    font-size: 13px; color: var(--ink-soft); font-style: italic;
+  }
+  .exp-entry-meta {
+    font-size: 11px; color: var(--muted); text-align: right;
+    letter-spacing: 0.04em; line-height: 1.55;
+    white-space: nowrap;
+  }
+  .exp-entry-loc { color: var(--muted); }
+  .exp-entry-list {
+    margin: 8px 0 0 58px;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .exp-entry-list li { margin: 4px 0; padding-left: 14px; position: relative; }
+  .exp-entry-list li::before {
+    content: '·'; position: absolute; left: 4px; color: var(--muted);
+  }
+  @media (max-width: 720px) {
+    .exp-entry-head { grid-template-columns: 36px 1fr; gap: 10px; }
+    .exp-entry-meta { grid-column: 1 / -1; text-align: left; padding-left: 46px; }
+    .exp-entry-list { margin-left: 46px; }
+    .exp-entry-logo { width: 32px; height: 32px; }
+    .exp-entry-logo img { max-width: 22px; max-height: 22px; }
+  }
+
+  /* (legacy timeline CSS kept below in case of rollback) */
+  .exp-timeline {
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .exp-timeline-axis {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    margin-bottom: 8px;
+  }
+  .exp-timeline-years {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  .exp-row-bar {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 0;
+    padding: 5px 0;
+    cursor: pointer;
+  }
+  .exp-row-bar:hover .exp-bar-label,
+  .exp-row-bar.active .exp-bar-label {
+    color: var(--accent);
+  }
+  .exp-bar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    padding-right: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 200ms ease;
+  }
+  .exp-bar-track {
+    position: relative;
+    height: 22px;
+    border-radius: 5px;
+    background: var(--bg-soft);
+    overflow: hidden;
+  }
+  .exp-bar-divider {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: var(--line-strong);
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .exp-bar-period {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 5px;
+    transition: filter 220ms ease, transform 220ms ease;
+    z-index: 2;
+  }
+  .exp-row-bar:hover .exp-bar-period {
+    filter: brightness(1.08);
+  }
+  .exp-row-bar.active .exp-bar-period {
+    box-shadow: 0 0 0 2px var(--bg-elevated), 0 0 0 4px var(--accent);
+  }
+  .exp-bar-period {
+    background: var(--ink-soft);
+  }
+  .exp-bar-period.is-current {
+    background: var(--ink);
+  }
+  .exp-bar-period.is-past {
+    background: var(--ink-soft);
+    opacity: 0.55;
+  }
+  /* keep legacy class names mapped to monochrome neutral */
+  .exp-bar-period.color-violet,
+  .exp-bar-period.color-emerald,
+  .exp-bar-period.color-cyan,
+  .exp-bar-period.color-gold,
+  .exp-bar-period.color-gray { background: var(--ink-soft); }
+  @media (max-width: 720px) {
+    .exp-timeline-axis, .exp-row-bar { grid-template-columns: 90px 1fr; }
+    .exp-bar-label { font-size: 10px; padding-right: 8px; }
+    .exp-timeline-years { font-size: 9px; }
+  }
+
+  .exp-panel {
+    background: var(--bg-elevated); border: 1px solid var(--line); border-radius: 14px;
+    padding: 0 22px;
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 360ms ease, opacity 240ms ease, padding 360ms ease;
+  }
+  .exp-panel.open { padding: 22px; max-height: 1000px; opacity: 1; }
+  .exp-panel-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; gap: 12px; flex-wrap: wrap; }
+  .exp-panel-role { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .exp-panel-meta { font-size: 12px; color: var(--muted); }
+  .exp-panel-company { font-size: 13px; color: var(--ink-soft); margin-bottom: 10px; font-weight: 500; }
+  .exp-panel-list { margin: 0; padding-left: 16px; font-size: 13px; color: var(--ink-soft); }
+  .exp-panel-list li { margin: 4px 0; line-height: 1.55; }
+  .exp-empty { padding: 18px; text-align: center; font-size: 13px; color: var(--muted); }
+
+  /* COMPACT LIST sections (Teaching, Volunteering, Awards, Publications, Education) */
+  .compact-row {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 16px; padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .compact-row:last-child { border-bottom: none; }
+  .compact-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .compact-title .accent { color: var(--accent); font-weight: 700; }
+  .compact-sub { font-size: 12px; color: var(--ink-soft); font-style: italic; }
+  .compact-desc { font-size: 13px; color: var(--ink-soft); margin-top: 5px; line-height: 1.55; }
+  .compact-meta { font-size: 11px; color: var(--muted); white-space: nowrap; letter-spacing: 0.04em; }
+
+  /* PROJECTS — compact card list */
+  .proj-list { display: flex; flex-direction: column; }
+  .proj-row {
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .proj-row:last-child { border-bottom: none; }
+  .proj-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+  .proj-title .accent { color: var(--accent); }
+  .proj-meta { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .proj-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+  .stack-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .stack-tag {
+    font-size: 10px; padding: 2px 8px; border-radius: 4px;
+    background: var(--chip-bg); color: var(--muted);
+    font-weight: 500; letter-spacing: 0.04em;
+  }
+  .stack-tag.accent { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+
+  /* OSS — logo row */
+  .oss-row { display: flex; flex-wrap: wrap; gap: 14px; padding: 8px 0; }
+  .oss-item {
+    position: relative; width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 12px; background: var(--chip-bg); border: 1px solid var(--line);
+    transition: transform 220ms ease, border-color 220ms ease;
+    cursor: default; padding: 8px;
+  }
+  .oss-item:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .oss-item img { width: 32px; height: 32px; object-fit: contain; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: 130px 1fr; gap: 12px; }
+  .skill-row { display: contents; }
+  .skill-row > .skill-cat {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); padding-top: 8px;
+  }
+  .skill-row > .skill-list {
+    font-size: 13px; color: var(--ink-soft); padding: 6px 0; border-bottom: 1px solid var(--line); line-height: 1.7;
+  }
+  .skill-row:last-child > .skill-list { border-bottom: none; }
+  .skill-list strong { color: var(--ink); font-weight: 600; }
+
+  /* CERTIFICATIONS — issuer-grouped text list (ATS friendly) */
+  .cert-group { margin-bottom: 22px; }
+  .cert-group-name {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink); padding-bottom: 6px; margin-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .cert-group-count {
+    font-size: 10px; font-weight: 600; color: var(--muted);
+    background: var(--chip-bg); padding: 1px 8px; border-radius: 999px;
+    letter-spacing: 0.04em; text-transform: none;
+  }
+  .cert-group-logo {
+    height: 14px; width: auto; vertical-align: -2px;
+    object-fit: contain;
+  }
+
+  /* CERT logo row (legacy — unused in resume but kept) */
+  .cert-row { display: flex; flex-wrap: wrap; gap: 14px; padding: 8px 0; }
+  .cert-item {
+    position: relative; width: 64px; height: 64px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 12px; background: var(--chip-bg); border: 1px solid var(--line);
+    cursor: pointer; padding: 0; font: inherit; color: inherit;
+    transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+  }
+  .cert-item:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .cert-item.active { border-color: var(--accent); background: var(--accent-soft); }
+  .cert-item img { width: 34px; height: 34px; object-fit: contain; }
+  .cert-text-logo { font-size: 9px; font-weight: 700; text-align: center; line-height: 1.15; color: var(--ink-soft); padding: 4px; }
+  .cert-count-badge {
+    position: absolute; top: -7px; right: -7px;
+    font-size: 10px; font-weight: 700;
+    background: var(--ink); color: var(--bg);
+    border-radius: 999px; min-width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 5px; border: 2px solid var(--bg);
+  }
+  .cert-panel {
+    margin-top: 18px; background: var(--bg-elevated); border: 1px solid var(--line); border-radius: 14px;
+    padding: 0 20px; max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 320ms ease, opacity 200ms ease, padding 320ms ease;
+  }
+  .cert-panel.open { max-height: 900px; opacity: 1; padding: 18px 20px; }
+  .cert-panel-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .cert-panel-issuer { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .cert-panel-count { font-size: 12px; color: var(--muted); }
+  .cert-list { display: flex; flex-direction: column; gap: 4px; }
+  .cert-list-row {
+    display: grid; grid-template-columns: 78px 1fr; gap: 14px;
+    font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--line);
+  }
+  .cert-list-row:last-child { border-bottom: none; }
+  .cert-list-row .cert-date { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .cert-list-row .cert-name { color: var(--ink-soft); }
+
+  /* COLLAPSIBLE */
+  .collapse-toggle {
+    display: block; margin: 12px auto 0;
+    background: none; border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 16px; font-size: 11px; font-weight: 600; color: var(--muted);
+    cursor: pointer; letter-spacing: 0.06em;
+    transition: border-color 200ms ease, color 200ms ease;
+  }
+  .collapse-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  .collapse-content { display: none; margin-top: 10px; }
+  .collapse-content.open { display: block; }
+
+  /* FAB */
+  .fab-stack {
+    position: fixed; right: 24px; bottom: 24px; z-index: 60;
+    display: flex; flex-direction: column; gap: 10px;
+    opacity: 0; pointer-events: none; transform: translateY(12px);
+    transition: opacity 280ms ease, transform 280ms ease;
+  }
+  .fab-stack.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .fab-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 999px; background: var(--ink); color: var(--bg);
+    border: none; cursor: pointer;
+    box-shadow: 0 8px 22px rgba(15, 17, 21, 0.18);
+    transition: transform 200ms ease, background 200ms ease;
+  }
+  .fab-btn:hover { transform: translateY(-2px); background: var(--accent); color: #fff; }
+  .fab-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+  footer {
+    margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 12px; text-align: center;
+  }
+
+  /* PRINT mode — auto-expand for PDF export */
+  @media print {
+    .topbar, .fab-stack, .collapse-toggle { display: none !important; }
+    body { background: #ffffff; color: #000; font-size: 11px; line-height: 1.4; }
+    main { max-width: 100%; padding: 16px; }
+    .about-hero { padding: 0 0 12px; margin-bottom: 14px; }
+    .about-name { font-size: 22px; }
+    section.resume-section { margin-bottom: 14px; page-break-inside: avoid; }
+    .section-head { margin-bottom: 8px; padding-bottom: 4px; }
+    .exp-panel { max-height: none !important; opacity: 1 !important; padding: 8px 0 !important; background: transparent !important; border: none !important; }
+    .exp-timeline { display: none; }
+    .collapse-content { display: block !important; }
+    .stack-tag { background: #eee; }
+  }
+
+  @media (max-width: 720px) {
+    .topbar-inner { grid-template-columns: 1fr; gap: 8px; }
+    .nav { gap: 18px; }
+    main { padding: 30px 18px 80px; }
+    .compact-row { grid-template-columns: 1fr; }
+    .compact-meta { text-align: left; }
+    .skills-grid { grid-template-columns: 1fr; gap: 4px; }
+    .skill-row > .skill-cat { padding-top: 12px; }
+  }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="portfolio_v2.html" class="brand" style="cursor:pointer; text-decoration:none;">
+      <span class="name">Somi Jeong</span>
+      <span class="tag">Resume · AI Engineer</span>
+    </a>
+    <nav class="nav">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="portfolio_v2.html">← Portfolio</a>
+    </nav>
+    <div class="tools">
+      <a class="icon-btn" href="https://github.com/1wos" target="_blank" aria-label="GitHub">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/someee" target="_blank" aria-label="LinkedIn">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+      </a>
+      <a class="icon-btn" href="https://scholar.google.com/citations?user=1UtK7JoAAAAJ" target="_blank" aria-label="Google Scholar">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.29 14.978 9.5 12 9.5c-2.977 0-5.548 1.79-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+      </a>
+      <a class="icon-btn" href="mailto:1wosxai@gmail.com" aria-label="Email">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg class="theme-icon-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-icon-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ABOUT -->
+  <section class="about-hero">
+    <h1 class="about-name">Somi Jeong</h1>
+    <p class="about-role">AI Engineer · Graduate Researcher</p>
+    <p class="about-pitch">
+      AI Engineer solving real-world problems with <em>Multimodal AI, Computer Vision, and LLM Agents.</em>
+      Currently building AI Agents while pursuing my M.E. in AI Systems at Hanyang University.
+      I turn complex challenges into working solutions, from environmental monitoring platforms to accessibility systems for the visually impaired.
+    </p>
+    <div class="about-meta">
+      <span class="about-meta-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-7-8-13a8 8 0 0116 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+        Seoul, KST
+      </span>
+      <a class="about-meta-item" href="mailto:1wosxai@gmail.com">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        1wosxai@gmail.com
+      </a>
+      <a class="about-meta-item" href="https://scholar.google.com/citations?user=1UtK7JoAAAAJ" target="_blank">📚 Google Scholar</a>
+      <a class="about-meta-item" href="https://github.com/1wos" target="_blank">⚡ GitHub</a>
+    </div>
+    <div class="focus-tags">
+      <span class="focus-tag">Multimodal AI</span>
+      <span class="focus-tag">AI Agents</span>
+      <span class="focus-tag">LLM</span>
+      <span class="focus-tag">Computer Vision</span>
+      <span class="focus-tag">Multi-Cloud</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="resume-section">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="count">3 roles · 2023–2026</span>
+    </div>
+    <div class="exp-list">
+      <div class="exp-entry">
+        <div class="exp-entry-head">
+          <div class="exp-entry-logo"><img src="assets/exp-logos/mysuni.jpg" alt="mySUNI" loading="lazy"></div>
+          <div>
+            <div class="exp-entry-role">AI Engineer (Research Assistant)</div>
+            <div class="exp-entry-company">SK Innovation · mySUNI Lx &amp; Tech</div>
+          </div>
+          <div class="exp-entry-meta">2025.09 — 2026.03<br/><span class="exp-entry-loc">약 7개월</span></div>
+        </div>
+        <ul class="exp-entry-list">
+          <li><strong>외주사 신규 기능 2~3개월 대기 사이클을 끊고, 부서가 직접 개발하는 자체 환경으로 LMS 플랫폼을 내재화</strong></li>
+          <li><strong>팀 전체가 표준으로 채택한 LLM 호출 인프라부터 21개 외부 플랫폼 자율 크롤링까지, 학습·운영 자동화 시스템 15개 이상 설계·구축</strong></li>
+          <li><strong>한국 mySUNI 학습 콘텐츠를 글로벌 거점이 그대로 쓸 수 있게 만드는 자동 번역 파이프라인 에이전트 개발</strong></li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-entry-head">
+          <div class="exp-entry-logo"><img src="assets/exp-logos/geri.jpg" alt="GERI" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'GERI'}))"></div>
+          <div>
+            <div class="exp-entry-role">Data Analyst Intern · Full-stack Developer</div>
+            <div class="exp-entry-company">Gumi Electronics &amp; Information Technology Research Institute (GERI)</div>
+          </div>
+          <div class="exp-entry-meta">2024.07 — 2024.08<br/><span class="exp-entry-loc">2개월</span></div>
+        </div>
+        <ul class="exp-entry-list">
+          <li><strong>재난 발생 시 흩어진 공공데이터를 한 화면에 모아주는 분석·시각화 풀스택 prototype</strong> 구축 (FastAPI)</li>
+          <li><strong>재난 트라우마를 겪은 피해자가 안전하게 대화할 수 있는 심리 지원 챗봇</strong> 모델링 — 도메인 특성을 반영한 LLM 응답 설계</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-entry-head">
+          <div class="exp-entry-logo"><img src="assets/exp-logos/etri.jpg" alt="ETRI" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'ETRI'}))"></div>
+          <div>
+            <div class="exp-entry-role">Research Intern</div>
+            <div class="exp-entry-company">한국전자통신연구원 (ETRI)</div>
+          </div>
+          <div class="exp-entry-meta">2023.07 — 2023.08<br/><span class="exp-entry-loc">2개월</span></div>
+        </div>
+        <ul class="exp-entry-list">
+          <li><strong>CCTV 영상에서 쓰레기 무단투기를 실시간 감지·추적·카운팅하는 통합 모니터링 시스템 개발</strong> (YOLOv5x + SORT/StrongSORT + Kalman + Hungarian 매칭)</li>
+          <li>동적 경로 예측과 시간대별 분석으로 단순 검출에서 행동 추적 시스템으로 확장</li>
+          <li>실시간 동적 블러로 개인정보 보호 기능까지 통합</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section class="resume-section">
+    <div class="section-head"><h2>Teaching</h2></div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">Computer Science Tutor — <span class="accent">Ministry of Science and ICT</span></div>
+        <div class="compact-sub">Science Gifted Education Center · 정보교과목 조교</div>
+        <div class="compact-desc">과학기술정보통신부 주관 「대학부설 과학영재교육원 공동 온라인 선교육과정」 정보교과목 조교 (전국 27개 대학 공동 운영 · 초5~중1 영재 대상).</div>
+      </div>
+      <div class="compact-meta">2024.06 — 2024.08</div>
+    </div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">Teaching Assistant · Andong National Univ. SW Convergence</div>
+        <div class="compact-sub">SW 교과목 TA · SW 융합 행사 보조강사</div>
+        <div class="compact-desc">SW 기초 교과목 TA + 경북교육청·AI교육센터 공동 SW 융합 행사 보조강사 + 안동대 영재교육원 프로그램 지원.</div>
+      </div>
+      <div class="compact-meta">2021.03 — 2024.12<br/>3년 9개월</div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES & VOLUNTEERING -->
+  <section class="resume-section">
+    <div class="section-head"><h2>Activities &amp; Volunteering</h2><span class="count">3 roles · 글로벌 활동</span></div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">Heckel.ai · <span class="accent">Fellow Editor</span> (Inaugural Issue Contributor)</div>
+        <div class="compact-sub">AI Webzine · 글로벌 온라인 협업</div>
+        <div class="compact-desc">창간호(2026.04 launch) Fellow Editor로 합류. AI 연구 논문 / 산업 트렌드 글의 에디토리얼 리뷰 + 큐레이션. 어려운 AI 연구·기술을 일반 독자가 읽기 쉬운 글로 풀어쓰는 작업.</div>
+      </div>
+      <div class="compact-meta">2026.04 — Present</div>
+    </div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">Technovation Girls — <span class="accent">Global AI Project Judge</span></div>
+        <div class="compact-sub">Google Women Techmakers 파트너 프로그램 · 글로벌 자원봉사</div>
+        <div class="compact-desc">Google Women Techmakers 파트너 글로벌 AI/앱 혁신 챌린지의 국제 심사위원. 60+ 국가 8~18세 여성 청소년 팀을 AI · 사회적 임팩트 두 축으로 평가. 2026 season returning judge.</div>
+      </div>
+      <div class="compact-meta">2024 · 2026 (returning)</div>
+    </div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">Women in Cloud · Member</div>
+        <div class="compact-desc">글로벌 Women in Cloud 커뮤니티 active 멤버 — cloud · AI 커리어 advancing 활동.</div>
+      </div>
+      <div class="compact-meta">2026.02 — Present</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (selected) -->
+  <section id="projects" class="resume-section">
+    <div class="section-head">
+      <h2>Selected Projects</h2>
+      <span class="count">Full list at <a href="portfolio_v2.html" style="color:var(--accent);">portfolio →</a></span>
+    </div>
+    <div class="proj-list">
+      <div class="proj-row">
+        <div class="proj-title">CareFlow — <span class="accent">Top 100</span> @ Google Cloud Gen AI Academy APAC · Cohort 1</div>
+        <div class="proj-meta">Mar 2026 – Present · 4-person Korea–India team (Inference Engines)</div>
+        <div class="proj-desc">APAC 만성질환 환자 케어 멀티에이전트 시스템. Root Agent + 8 specialist agents (ADK orchestration). <strong>Top 100 finalist from 192,660+ developers across 12+ countries</strong>. Grand Finale (May 11, 2026) 진출.</div>
+        <div class="stack-tags">
+          <span class="stack-tag accent">Multi-Agent</span>
+          <span class="stack-tag">Google ADK</span>
+          <span class="stack-tag">Gemini 2.5 Pro/Flash</span>
+          <span class="stack-tag">AlloyDB pgvector</span>
+          <span class="stack-tag">Agentic RAG</span>
+          <span class="stack-tag">FHIR R4</span>
+          <span class="stack-tag">7-Layer Safety</span>
+        </div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-title">BridgeCast AI — Microsoft × Women in Cloud AI Innovation Challenge</div>
+        <div class="proj-meta">Mar 2026 · Korea–Taiwan 3-person team · Full-stack architect</div>
+        <div class="proj-desc">청각장애인 4억 3천만 명을 위한 실시간 양방향 수화↔음성 통신 시스템. <strong>15 Azure services + Uni-Sign (ICLR 2025) + 3D 수화 아바타</strong>. Responsible AI built-in (Fitzpatrick fairness · WCAG 2.1 AA).</div>
+        <div class="stack-tags">
+          <span class="stack-tag accent">Multimodal</span>
+          <span class="stack-tag">Sign Language CV</span>
+          <span class="stack-tag">3D Avatar</span>
+          <span class="stack-tag">Azure</span>
+          <span class="stack-tag">Responsible AI</span>
+        </div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-title">Shellter — <span class="accent">2nd Place</span> @ NVIDIA × Gyeonggi LLM Service</div>
+        <div class="proj-meta">2025 · 외국인 임차인 AI 법률 상담</div>
+        <div class="proj-desc">한국 임대차 계약서 검토 격차를 푸는 풀스택 AI 법률 상담 시스템. RAG + Upstage Groundedness Check + 6개 언어 + 임대인 상습 채무불이행자 자동 조회.</div>
+        <div class="stack-tags">
+          <span class="stack-tag">RAG</span>
+          <span class="stack-tag">Upstage Solar Pro2</span>
+          <span class="stack-tag">i18n × 6</span>
+          <span class="stack-tag">Gradio</span>
+        </div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-title">지능형 오염원 통합 추적 플랫폼 — <span class="accent">환경부장관상 (최우수상)</span></div>
+        <div class="proj-meta">2025 대국민 지하수 빅데이터 공모전 · K-water · AI 모델링 리드 + PM</div>
+        <div class="proj-desc">국내 최초 <strong>MODFLOW + GNN 융합 분석</strong>으로 지하수 오염원 위치·유형을 동시 규명. 9종 공공데이터 시군구 단위 통합. 사후 대응 → 선제적 관리 체계 전환 제안.</div>
+        <div class="stack-tags">
+          <span class="stack-tag">MODFLOW / Flopy</span>
+          <span class="stack-tag">GNN</span>
+          <span class="stack-tag">Streamlit</span>
+        </div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-title">Blind_crossWalk — <span class="accent">KIIT Gold + KCI 1저자</span></div>
+        <div class="proj-meta">2024 산학협력 · Andong National × Global Korea Co.</div>
+        <div class="proj-desc">시각장애인을 위한 횡단보도 안전 시스템. 단일 폰 카메라 + Few-shot YOLO + Grounding DINO + monocular geometry로 LiDAR·stereo·네트워크 없이 작동. 안동시 실 보행 환경 field-tested.</div>
+        <div class="stack-tags">
+          <span class="stack-tag">Few-shot YOLO</span>
+          <span class="stack-tag">Grounding DINO</span>
+          <span class="stack-tag">Monocular Distance</span>
+          <span class="stack-tag">On-device</span>
+        </div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-title">Docent Matter — <span class="accent">대상</span> @ SW중심대학 영남권 연합 해커톤</div>
+        <div class="proj-meta">2024 · 박물관 AI 도슨트 챗봇 · 4인팀 (챗봇·프롬프트 담당)</div>
+        <div class="proj-desc">인간 도슨트 한계(운영시간·개인화·비용)를 RAG + 음성 인터페이스로 보완한 박물관 AI 도슨트. 복천 박물관(부산) + 하회동 탈 박물관(안동) RAG 통합.</div>
+        <div class="stack-tags">
+          <span class="stack-tag">LangChain</span>
+          <span class="stack-tag">Upstage SOLAR</span>
+          <span class="stack-tag">ChromaDB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section class="resume-section">
+    <div class="section-head">
+      <h2>Open Source</h2>
+      <span class="count">5 merged · 2 in review</span>
+    </div>
+    <div class="oss-row">
+      <a class="oss-item" href="https://github.com/huggingface/lerobot/issues/3134" target="_blank" title="HuggingFace LeRobot · adopted as canonical i18n tracker in v0.6.0">
+        <img src="assets/oss-logos/huggingface.svg" alt="HuggingFace" loading="lazy">
+      </a>
+      <a class="oss-item" href="https://github.com/microsoft-foundry/ai-agents-for-beginners" target="_blank" title="Microsoft Foundry · 5 PRs merged (Korean docs)">
+        <img src="assets/oss-logos/microsoft-foundry.webp" alt="Microsoft Foundry" loading="lazy">
+      </a>
+      <a class="oss-item" href="https://github.com/kubernetes/website/pull/54481" target="_blank" title="Kubernetes · PR #54481 merged (Korean docs)">
+        <img src="assets/oss-logos/kubernetes.svg" alt="Kubernetes" loading="lazy">
+      </a>
+      <a class="oss-item" href="https://github.com/apache/airflow/pull/61762" target="_blank" title="Apache Airflow · PR #61762 merged (Korean UI)">
+        <img src="assets/oss-logos/airflow.webp" alt="Apache Airflow" loading="lazy">
+      </a>
+      <a class="oss-item" href="https://braillify.kr/" target="_blank" title="Braillify · 한글 점역 라이브러리 (Rust + TS)">
+        <img src="assets/oss-logos/braillify.svg" alt="Braillify" loading="lazy">
+      </a>
+    </div>
+  </section>
+
+  <!-- AWARDS — 최신순 -->
+  <section class="resume-section">
+    <div class="section-head"><h2>Awards</h2></div>
+    <div class="compact-row">
+      <div><div class="compact-title">Top 100 Finalist · <span class="accent">Google Cloud Gen AI Academy APAC</span></div><div class="compact-sub">192,660+ developers · 12+ countries</div></div>
+      <div class="compact-meta">2026</div>
+    </div>
+    <div class="compact-row">
+      <div><div class="compact-title">최우수상 · <span class="accent">환경부장관상</span></div><div class="compact-sub">2025 대국민 지하수 빅데이터 공모전 · 환경부</div></div>
+      <div class="compact-meta">2025</div>
+    </div>
+    <div class="compact-row">
+      <div><div class="compact-title">2nd Place · <span class="accent">NVIDIA × 경기도경제과학진흥원</span></div><div class="compact-sub">Shellter — 임대 사기 방지 챗봇</div></div>
+      <div class="compact-meta">2025</div>
+    </div>
+    <div class="compact-row">
+      <div><div class="compact-title">우수상 · <span class="accent">WISET AI 데이터 분석 과정</span></div><div class="compact-sub">ARTIQUE — 미술 경매 도슨트</div></div>
+      <div class="compact-meta">2025</div>
+    </div>
+    <div class="compact-row">
+      <div><div class="compact-title">대상 · <span class="accent">SW중심대학 영남권 연합 SW 융합 해커톤</span></div><div class="compact-sub">박물관 AI 도슨트 · 과기정통부 · IITP · 안동대 · 동아대</div></div>
+      <div class="compact-meta">2024</div>
+    </div>
+    <div class="compact-row">
+      <div><div class="compact-title">Best Paper Award · <span class="accent">한국멀티미디어학회 (KMMS)</span></div><div class="compact-sub">과수농장 유해조류 탐지 (주저자)</div></div>
+      <div class="compact-meta">2024</div>
+    </div>
+    <button id="more-awards-btn" class="collapse-toggle" type="button">Show all 28 awards ↓</button>
+    <div id="more-awards" class="collapse-content">
+      <div class="compact-row"><div><div class="compact-title">입상 · 대구시 공공데이터 활용 창업경진대회</div><div class="compact-sub">대구디지털혁신진흥원</div></div><div class="compact-meta">2025</div></div>
+      <div class="compact-row"><div><div class="compact-title">금상 ×4 + 은·동상 ×6 · 한국정보기술학회 (KIIT)</div><div class="compact-sub">시각장애인·자율주행·유해조류·LLM-RAG 등 13편 (주저자 다수)</div></div><div class="compact-meta">2023–2024</div></div>
+      <div class="compact-row"><div><div class="compact-title">영천시장상 · 2024 영천시 공공데이터 활용 경진대회</div><div class="compact-sub">NLP 식물 케어 관리</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title">최우수상 · 제3회 스마트 AI·SW 경진대회</div><div class="compact-sub">퍼스널 안경 추천 시스템 · 안동대 × 제주대</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title">최우수상 · 휴머노이드 AI 로봇캠프</div><div class="compact-sub">안동대 안동형 일자리사업단</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title">우수발표상 · 한국게임학회 추계학술발표대회</div><div class="compact-sub">디지털 시대 게임 산업 분석</div></div><div class="compact-meta">2023</div></div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS & PATENTS -->
+  <section id="publications" class="resume-section">
+    <div class="section-head"><h2>Publications &amp; Patents</h2><span class="count">26 papers · 2 patents</span></div>
+
+    <div class="cert-group">
+      <div class="cert-group-name">Under Review <span class="cert-group-count">1</span></div>
+      <div class="compact-row"><div><div class="compact-title">Delayed Protection: Latent Neutrality in LLM-Mediated Multi-User Conflict</div><div class="compact-sub">E. Lee, J. Nam, <strong>S. Jeong</strong>, I. Ryou · KDD 2026 (Under Review)</div></div><div class="compact-meta">2026</div></div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-name">KCI-Indexed Journal Papers <span class="cert-group-count">3</span></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · A Semi-Supervised YOLO Framework Based on Few-Shot Learning and Grounding DINO for Visually Impaired Pedestrian Safety</div><div class="compact-sub">J. of KIIT</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · Design of a Survival RPG Game with Generative Agent NPCs</div><div class="compact-sub">J. of Digital Contents Society</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · Groundwater Contamination Source Backtracking and Type Inference System via Hydraulic Modeling and Spatial Graph Analysis</div><div class="compact-sub">J. of KIIT (Under Revision)</div></div><div class="compact-meta">2025</div></div>
+    </div>
+
+    <button id="more-pubs-btn" class="collapse-toggle" type="button">Show all 26 papers + 2 patents ↓</button>
+    <div id="more-pubs" class="collapse-content"><div class="cert-group">
+      <div class="cert-group-name">KIIT (한국정보기술학회) <span class="cert-group-count">11</span></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Gold] 1저자</span> · Few-Shot Learning and Grounding DINO Integrated YOLO Optimization Framework for Visually Impaired Pedestrian Safety</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Gold] 1저자</span> · YOLOv8-CNNLSTM Real-Time Hazard Detection and Prediction for Worker Safety in Smart Manufacturing</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Gold] 1저자</span> · Comparative Study of Harmful Bird Detection Using Grounding DINO and YOLOv8</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Gold]</span> · Edge Device-Based Harmful Bird Detection System Model Optimization (공저자)</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Silver] 1저자</span> · Factor Analysis of Green Signal Time for AI-Based Crosswalk Assistance for Visually Impaired</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze] 1저자</span> · Correlation Analysis Between Crosswalk Characteristics and Safety Facilities for the Visually Impaired</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze] 1저자</span> · Multimodal Situation Awareness and Context Reasoning for Autonomous Vehicle Safety</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze] 1저자</span> · LLM-RAG Based Real-Time Personalized Travel Recommendation Web Service Design</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze] 1저자</span> · Specialized Data Augmentation and Vision Transformer-Based Image Classification for Autonomous Driving</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze] 1저자</span> · Design and Implementation of Education Resource Recommendation System by Programming Language</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze] 1저자</span> · Social Work Experience in VR: Dementia Prevention Game Design Using VR</div></div><div class="compact-meta">2023</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name">KMMS (한국멀티미디어학회) <span class="cert-group-count">4</span></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Best Paper Award] 1저자</span> · Harmful Bird Detection in Orchards Using Data Augmentation</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title">Comparison of Unsupervised Object Detection Models for Orchard Bird Detection Using Jetson Nano (공저자)</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · GPT Fine-Tuning Based University Admission Information Guidance System Design</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title">A Study on Cultural Heritage Asset Acquisition Using Photogrammetry (공저자)</div></div><div class="compact-meta">2023</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name">Korean Game Society <span class="cert-group-count">3</span></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Best Presentation] 1저자</span> · Game Industry Analysis in the Digital Era: Insights Through Time-Series, Clustering, and Association Analysis</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · Factors Determining Win/Loss in League of Legends: In-Depth Analysis Using EDA and Machine Learning</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · Design of Generative Agents and Game NPC</div></div><div class="compact-meta">2023</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name">Other Societies <span class="cert-group-count">3</span></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">[Bronze]</span> · Development of Storytelling-Based Tycoon Game (공저자, KDCS)</div></div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">1저자</span> · Video Analysis Component for Real-Time Illegal Dumping Prediction (KICS)</div></div><div class="compact-meta">2023</div></div>
+      <div class="compact-row"><div><div class="compact-title">IoT-Based Flood Disaster Prevention and Water Quality Monitoring System (KIPS, 공저자)</div></div><div class="compact-meta">2022</div></div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-name">Patents <span class="cert-group-count">2</span></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">PN240223</span> · Autonomous Vehicle with Foldable Cart (Inventor)</div><div class="compact-sub">대구가톨릭대 산학협력단 출원 · 자동차 도메인</div></div><div class="compact-meta">2024</div></div>
+      <div class="compact-row"><div><div class="compact-title"><span class="accent">PN240221</span> · Fire Detection Sensor + Suppression Module Scenario (Inventor)</div><div class="compact-sub">대구가톨릭대 산학협력단 출원 · 자동차 도메인</div></div><div class="compact-meta">2024</div></div>
+    </div>
+
+    <div class="cert-group">
+      <div class="cert-group-name">Editorial <span class="cert-group-count">1</span></div>
+      <div class="compact-row"><div><div class="compact-title">"Legal AI Agents in EU and South Korea" — heckelai.com (창간호)</div><div class="compact-sub">International co-author with Efstathios Iliopoulos (ASEP, Athens)</div></div><div class="compact-meta">2026.04</div></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="resume-section">
+    <div class="section-head"><h2>Education</h2></div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">Master of Engineering · Department of AI Systems</div>
+        <div class="compact-sub">Hanyang University · Graduate School of Applied Artificial Intelligence · 특수대학원 야간과정</div>
+        <div class="compact-desc">Expected to graduate Aug 2027</div>
+      </div>
+      <div class="compact-meta">2025.09 — Present</div>
+    </div>
+    <div class="compact-row">
+      <div>
+        <div class="compact-title">B.S. Computer Engineering · Future Mobility Convergence — Mobility DX</div>
+        <div class="compact-sub">Andong National University · GPA 4.15 / 4.5</div>
+        <div class="compact-desc">Coursework — Machine Learning · Deep Learning · Computer Vision · NLP · Data Structures · Algorithms · Linear Algebra · Probability &amp; Statistics</div>
+      </div>
+      <div class="compact-meta">2021.03 — 2025.02</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="resume-section">
+    <div class="section-head"><h2>Technical Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-row"><div class="skill-cat">AI / ML</div><div class="skill-list"><strong>PyTorch</strong> · HuggingFace · LangChain · Gemini · Claude · GPT · Multi-Agent · Google ADK · MCP · Agentic RAG · pgvector · LoRA/PEFT</div></div>
+      <div class="skill-row"><div class="skill-cat">Languages</div><div class="skill-list"><strong>Python</strong> · TypeScript · Java · SQL</div></div>
+      <div class="skill-row"><div class="skill-cat">Cloud</div><div class="skill-list"><strong>GCP</strong> · <strong>Azure</strong> · <strong>AWS</strong> · Cloud Run · Azure OpenAI · Semantic Kernel · FastAPI · Docker · Bicep · ONNX</div></div>
+      <div class="skill-row"><div class="skill-cat">Frontend</div><div class="skill-list">React · Vite · Tailwind · Three.js · Playwright</div></div>
+      <div class="skill-row"><div class="skill-cat">Data</div><div class="skill-list">Airflow · Kafka · Spark · Redis · PostgreSQL</div></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS — 발급기관별 텍스트 리스트 (ATS 친화) -->
+  <section class="resume-section">
+    <div class="section-head"><h2>Certifications</h2><span class="count">22 certs</span></div>
+
+    <div class="cert-group">
+      <div class="cert-group-name"><img class="cert-group-logo" src="assets/cert-logos/nvidia.svg" alt="NVIDIA"></div>
+      <div class="compact-row"><div><div class="compact-title">NVIDIA-Certified Associate · Multimodal Generative AI</div></div><div class="compact-meta">2025.11</div></div>
+      <div class="compact-row"><div><div class="compact-title">Building LLM Applications With Prompt Engineering</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Building RAG Agents with LLMs</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Building Transformer-Based Natural Language Processing</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Efficient Large Language Model (LLM) Customization</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Generative AI with Diffusion Models</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Rapid Application Development with Large Language Models</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Building Agentic AI Applications with LLMs</div></div><div class="compact-meta">2025.08</div></div>
+      <div class="compact-row"><div><div class="compact-title">Computer Vision for Industrial Inspection</div></div><div class="compact-meta">2025.07</div></div>
+      <div class="compact-row"><div><div class="compact-title">Getting Started with AI on Jetson Nano</div></div><div class="compact-meta">2024.07</div></div>
+      <div class="compact-row"><div><div class="compact-title">Fundamentals of Deep Learning</div></div><div class="compact-meta">2023.05</div></div>
+    </div>
+
+    <button id="more-certs-btn" class="collapse-toggle" type="button">Show all 22 certs ↓</button>
+    <div id="more-certs" class="collapse-content"><div class="cert-group">
+      <div class="cert-group-name"><img class="cert-group-logo" src="assets/cert-logos/ibm.svg" alt="IBM"></div>
+      <div class="compact-row"><div><div class="compact-title">IBM AI Developer Professional</div></div><div class="compact-meta">2025.04</div></div>
+      <div class="compact-row"><div><div class="compact-title">IBM AI Engineering Professional</div></div><div class="compact-meta">2025.04</div></div>
+      <div class="compact-row"><div><div class="compact-title">IBM Data Engineering Professional</div></div><div class="compact-meta">2025.04</div></div>
+      <div class="compact-row"><div><div class="compact-title">IBM Generative AI Engineering Professional</div></div><div class="compact-meta">2025.04</div></div>
+      <div class="compact-row"><div><div class="compact-title">IBM Machine Learning Professional</div></div><div class="compact-meta">2025.04</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name"><img class="cert-group-logo" src="assets/cert-logos/microsoft.svg" alt="Microsoft"></div>
+      <div class="compact-row"><div><div class="compact-title">Generative AI with Azure OpenAI &amp; Semantic Kernel</div></div><div class="compact-meta">2026.03</div></div>
+      <div class="compact-row"><div><div class="compact-title">Innovation Challenge Hackathon March 2026 (Americas Azure Team)</div></div><div class="compact-meta">2026.03</div></div>
+      <div class="compact-row"><div><div class="compact-title">Azure AI Fundamentals (AI-900)</div></div><div class="compact-meta">2024.05</div></div>
+      <div class="compact-row"><div><div class="compact-title">Azure Fundamentals (AZ-900)</div></div><div class="compact-meta">2023.02</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name"><img class="cert-group-logo" src="assets/cert-logos/google.svg" alt="Google"></div>
+      <div class="compact-row"><div><div class="compact-title">Google Analytics Certification (GAC, GA4)</div></div><div class="compact-meta">2025.08</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name">한국표준협회 · 엘리스</div>
+      <div class="compact-row"><div><div class="compact-title">TOPA 1급 — Test of Practical Artificial Intelligence</div></div><div class="compact-meta">2025.04</div></div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-name">한국데이터산업진흥원</div>
+      <div class="compact-row"><div><div class="compact-title">SQL 개발자 (SQLD)</div></div></div><div class="compact-meta">2025.04</div></div>
+    </div>
+  </section>
+
+  <footer>© 2026 Somi Jeong · <a href="portfolio_v2.html" style="color:var(--accent);">Portfolio</a></footer>
+</main>
+
+<!-- FAB -->
+<div class="fab-stack" id="fab-stack">
+  <button class="fab-btn" id="fab-top" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<script>
+  // Theme toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  // Experience expand
+  const EXP_DATA = {
+    heckel: {
+      role: 'Fellow Editor',
+      company: 'Heckel.ai · AI Webzine (Inaugural Issue Contributor)',
+      period: '2026.04 — Present · 글로벌 온라인',
+      bullets: [
+        '창간호(2026.04 launch) Fellow Editor로 합류 — 글로벌 온라인 협업',
+        'AI 연구 논문 / 산업 트렌드 글의 에디토리얼 리뷰 + 큐레이션',
+        '어려운 AI 연구·기술을 일반 독자가 읽기 쉬운 글로 풀어쓰는 작업',
+      ],
+    },
+    technovation: {
+      role: 'Judge (Volunteer)',
+      company: 'Technovation Girls 2026 · Google Women Techmakers 파트너 프로그램',
+      period: '2026.04 — Present · 글로벌 자원봉사',
+      bullets: [
+        '2026 season Judge — Quarterfinals submission review (rubric 기반 정성 평가)',
+        '글로벌 심사위원 풀 — Google Women Techmakers 공식 파트너 프로그램',
+        '참가팀의 AI/앱 프로토타입을 기술 + 사회적 임팩트 두 축으로 평가',
+      ],
+    },
+    sk: {
+      role: 'AI Engineer (Research Assistant)',
+      company: 'SK이노베이션 · mySUNI Lx & Tech',
+      period: '2025.09 — 2026.03 · 약 7개월',
+      bullets: [
+        '외주 인계 LMS 코드베이스를 19개 마이크로서비스 로컬 build/run까지 내재화 — VPN·외주 사이클 단절',
+        'LLM 기반 자동화 시스템 15+개 설계·구축 — Multi-LLM Wrapper(팀 호출 표준) · AgenticCrawler(4-Agent 자율 크롤러, 21개 플랫폼) · Meeting Vibe(STT→LLM 회의록) · 강사 Agent · 직무·스킬 Taxonomy(15-Step LLM Pipeline) · HTML→Markdown 변환 · 25개 관계사 러닝 리포트 등',
+        'RHQ 일본어 번역 — 1,500+ 비디오 SRT + 63 MHTML 큐브 + 12 도메인 한·영·일 용어 사전 + STT 보정 패턴 286개',
+      ],
+    },
+    geri: {
+      role: 'Data Analyst Intern · Full-stack Developer',
+      company: 'Gumi Electronics & Information Technology Research Institute (GERI)',
+      period: '2024.07 — 2024.08 · 2개월',
+      bullets: [
+        '재난안전 공공데이터를 분석·시각화하는 FastAPI 기반 데이터 분석 웹 플랫폼 prototype 개발',
+        '재난안전 공공데이터셋 ingestion · preprocessing · visualization 파이프라인 구축',
+        'FastAPI 기반 풀스택 prototype — Backend + Frontend + API delivery 통합',
+      ],
+    },
+    etri: {
+      role: 'Research Intern',
+      company: '한국전자통신연구원 (ETRI)',
+      period: '2023.07 — 2023.09 · 3개월',
+      bullets: [
+        'CCTV 기반 실시간 쓰레기 무단 투기 감지 통합 모니터링 시스템 개발',
+        'YOLOv5x 객체 검출 + SORT/StrongSORT + Kalman filter로 다중 객체 추적 시스템 구현',
+        'Hungarian 알고리즘 기반 객체 ID 매칭 + 동적 경로 예측 + 시간대별 분석',
+        '실시간 동적 블러로 개인정보 보호 기능 통합',
+      ],
+    },
+  };
+
+  document.querySelectorAll('.exp-row-bar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.exp;
+      const data = EXP_DATA[id];
+      if (!data) return;
+      const panel = document.getElementById('exp-panel');
+      const wasActive = btn.classList.contains('active');
+      document.querySelectorAll('.exp-row-bar').forEach(b => b.classList.remove('active'));
+      if (wasActive) {
+        panel.classList.remove('open');
+        panel.innerHTML = '<div class="exp-empty">막대를 클릭하면 해당 경력 상세가 펼쳐져요</div>';
+        return;
+      }
+      btn.classList.add('active');
+      panel.innerHTML = `
+        <div class="exp-panel-header">
+          <span class="exp-panel-role">${data.role}</span>
+          <span class="exp-panel-meta">${data.period}</span>
+        </div>
+        <div class="exp-panel-company">${data.company}</div>
+        <ul class="exp-panel-list">
+          ${data.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      `;
+      panel.classList.add('open');
+    });
+  });
+
+  // Collapsibles
+  function setupCollapse(btnId, contentId, labelShow, labelHide) {
+    const b = document.getElementById(btnId);
+    const c = document.getElementById(contentId);
+    if (!b || !c) return;
+    b.addEventListener('click', () => {
+      const isOpen = c.classList.toggle('open');
+      b.textContent = isOpen ? labelHide : labelShow;
+    });
+  }
+  setupCollapse('more-awards-btn', 'more-awards', 'Show all 28 awards ↓', 'Hide ↑');
+  setupCollapse('more-pubs-btn', 'more-pubs', 'Show all 26 papers + 2 patents ↓', 'Hide ↑');
+  setupCollapse('more-certs-btn', 'more-certs', 'Show all 22 certs ↓', 'Hide ↑');
+
+  // Certifications dropdown panel
+  const CERT_DATA = {
+    nvidia: { name: 'NVIDIA', certs: [
+      { d: '2025.11', n: 'NVIDIA-Certified Associate: Multimodal Generative AI' },
+      { d: '2025.08', n: 'Building LLM Applications With Prompt Engineering' },
+      { d: '2025.08', n: 'Building RAG Agents with LLMs' },
+      { d: '2025.08', n: 'Building Transformer-Based Natural Language Processing' },
+      { d: '2025.08', n: 'Efficient Large Language Model (LLM) Customization' },
+      { d: '2025.08', n: 'Generative AI with Diffusion Models' },
+      { d: '2025.08', n: 'Rapid Application Development with Large Language Models' },
+      { d: '2025.08', n: 'Building Agentic AI Applications with LLMs' },
+      { d: '2025.07', n: 'Computer Vision for Industrial Inspection' },
+      { d: '2024.07', n: 'Getting Started with AI on Jetson Nano' },
+      { d: '2023.05', n: 'Fundamentals of Deep Learning' },
+    ]},
+    ibm: { name: 'IBM', certs: [
+      { d: '2025.04', n: 'IBM AI Developer Professional' },
+      { d: '2025.04', n: 'IBM AI Engineering Professional' },
+      { d: '2025.04', n: 'IBM Data Engineering Professional' },
+      { d: '2025.04', n: 'IBM Generative AI Engineering Professional' },
+      { d: '2025.04', n: 'IBM Machine Learning Professional' },
+    ]},
+    microsoft: { name: 'Microsoft', certs: [
+      { d: '2026.03', n: 'Generative AI with Azure OpenAI & Semantic Kernel' },
+      { d: '2026.03', n: 'Innovation Challenge Hackathon March 2026 (Americas Azure Team)' },
+      { d: '2024.05', n: 'Azure AI Fundamentals (AI-900)' },
+      { d: '2023.02', n: 'Azure Fundamentals (AZ-900)' },
+    ]},
+    google: { name: 'Google', certs: [
+      { d: '2025.08', n: 'Google Analytics Certification (GAC, GA4)' },
+    ]},
+    ksa: { name: '한국표준협회 · 엘리스', certs: [
+      { d: '2025.04', n: 'TOPA 1급 — Test of Practical Artificial Intelligence' },
+    ]},
+    kdata: { name: '한국데이터산업진흥원', certs: [
+      { d: '2025.04', n: 'SQL 개발자' },
+    ]},
+  };
+  document.querySelectorAll('.cert-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const issuer = btn.dataset.issuer;
+      const data = CERT_DATA[issuer];
+      if (!data) return;
+      const panel = document.getElementById('cert-panel');
+      const wasActive = btn.classList.contains('active');
+      document.querySelectorAll('.cert-item').forEach(b => b.classList.remove('active'));
+      if (wasActive) { panel.classList.remove('open'); return; }
+      btn.classList.add('active');
+      document.getElementById('cert-panel-issuer').textContent = data.name;
+      document.getElementById('cert-panel-count').textContent = `${data.certs.length} cert${data.certs.length > 1 ? 's' : ''}`;
+      document.getElementById('cert-list').innerHTML = data.certs.map(c =>
+        `<div class="cert-list-row"><span class="cert-date">${c.d}</span><span class="cert-name">${c.n}</span></div>`
+      ).join('');
+      panel.classList.add('open');
+    });
+  });
+
+  // FAB
+  const fab = document.getElementById('fab-stack');
+  const fabTop = document.getElementById('fab-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 240) fab.classList.add('visible');
+    else fab.classList.remove('visible');
+  }, { passive: true });
+  fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
