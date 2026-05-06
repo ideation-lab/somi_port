@@ -1737,7 +1737,7 @@
   <section id="about" class="about">
     <div class="about-hero">
       <h1 class="about-name">Somi Jeong</h1>
-      <p class="about-role">AI Engineer &amp; AI Researcher</p>
+      <p class="about-role">AI Engineer</p>
       <div class="about-meta">
         <span class="about-meta-item">
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-7-8-13a8 8 0 0116 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
@@ -2612,7 +2612,7 @@
     <div class="exp-row">
       <div>
         <div class="exp-role">AI Engineer (Research Assistant)</div>
-        <div class="exp-company">SK이노베이션 · mySUNI Lx &amp; Tech</div>
+        <div class="exp-company">SK Innovation · mySUNI LX (Learning Experience) &amp; Tech</div>
         <p class="exp-desc">SK 그룹 사내 학습 플랫폼 mySUNI의 LMS 운영·AI 적용 조직. 외주 의존 단절 + AI 자동화 적용을 위한 핵심 엔지니어링 책임.</p>
         <ul class="exp-list">
           <li>외주 인계 LMS 코드베이스 자체 내재화 — <strong>19개 마이크로서비스 로컬 build/run</strong>, VPN·외주 사이클 단절</li>
@@ -3231,7 +3231,7 @@
           raw: true,
           body: `
             <ul>
-              <li><strong>1. 아키텍처 자체 분석 (Agent 팀 + 본인 정독 병행)</strong> — 인계 자료 거의 없는 상태에서 <strong>역할별 페르소나(Architecture Reviewer · Auth Flow Analyst · DB Schema Mapper 등)를 설계한 LLM 에이전트 팀</strong>이 약 20개 BE 마이크로서비스 + sku-shared 라이브러리를 분담 분석, 본인이 cross-check하며 아키텍처 맵·포트·DB 연결·인증 흐름을 자체 작성. <em>AI 엔지니어가 자기 분석 작업에 AI를 적용한 메타 사례.</em></li>
+              <li><strong>1. 아키텍처 자체 분석 (Agent 팀 + 본인 정독 병행)</strong> — 인계 자료 거의 없는 상태에서 <strong>역할별 페르소나(Architecture Reviewer · Auth Flow Analyst · DB Schema Mapper 등)를 설계한 LLM 에이전트 팀</strong>이 약 20개 BE 마이크로서비스 + sku-shared 라이브러리를 분담 분석, 본인이 cross-check하며 아키텍처 맵·포트·DB 연결·인증 흐름을 자체 작성.</li>
               <li><strong>2. 인프라 로컬화</strong> — MariaDB / MongoDB / Redis / Kafka / Zookeeper 를 Docker Compose 로 일괄 구성, DB 초기화 스크립트(SQL/JS)로 원클릭 기동 환경 구현 (DB 데이터 543MB 정착)</li>
               <li><strong>3. 사내 의존성 해체</strong> — 약 20개 <code>build.gradle</code>에서 사내 Nexus 의존성 제거 → <code>mavenLocal() + mavenCentral()</code> 전환, 사설 Docker base image → <code>eclipse-temurin:17-jre</code> 교체, SuniID·FCM·AES 등 외부 의존성을 조건부 비활성화 / 로컬 모드 전환</li>
               <li><strong>4. 인증 체계 우회</strong> — K8s Envoy 사이드카 인증을 <strong>Vite proxy 기반 로컬 시뮬레이션</strong>으로 구현, ProfileManager 의 정확 일치 검사 이슈를 코드 추적으로 발견 → Spring profile 대신 시스템 프로퍼티 우회 방식 채택</li>
@@ -3395,7 +3395,7 @@
           heading: 'Enhanced 버전 — Paper future work를 직접 구현',
           raw: true,
           body: `
-            <p>논문 conclusion에 적었던 "객체가 frame 밖 나갔다 들어올 때 새로운 ID 부여 문제"에 대한 future work를 발표 이후 직접 구현했다 (<code>original.counter_chineese.py</code>).</p>
+            <p>논문 conclusion에 적었던 "객체가 frame 밖 나갔다 들어올 때 새로운 ID 부여 문제"에 대한 future work를 발표 이후 구현했다 (<code>original.counter_chineese.py</code>).</p>
             <ul>
               <li><strong>SORT → StrongSORT 진화</strong> — Kalman + Hungarian 만으로는 부족, appearance feature 추가</li>
               <li><strong>OSNet Re-Identification</strong> — <code>osnet_x0_25_msmt17.pt</code> 가중치로 객체 외형 임베딩 → frame 이탈 후 복귀 시 ID 일치</li>
@@ -5382,7 +5382,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
     },
     'bridgecast': {
       title: 'BridgeCast AI',
-      meta: 'Microsoft × Women in Cloud AI Innovation Challenge · Inclusive Communication Hub · March 2026 · 한국×대만 cross-border 팀 · <strong>프로젝트 주도</strong>',
+      meta: 'Microsoft × Women in Cloud AI Innovation Challenge · Inclusive Communication Hub · March 2026 · 한국×대만 cross-border 팀',
       sections: [
         {
           heading: 'Overview',
@@ -5560,7 +5560,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
           heading: 'My Role',
           raw: true,
           body: `
-            <p>NaN 팀에서 <strong>아이디어 발굴 · Figma UX/UI 풀 설계 · 22개 공공데이터 통합 아키텍처</strong>를 주도했다. 기획서 텍스트 정리는 팀 리더(창업 경험자)가 담당했다.</p>
+            <p>NaN 팀에서 <strong>아이디어 발굴 · Figma UX/UI 풀 설계 · 22개 공공데이터 통합 아키텍처</strong>를 담당했다. 기획서 텍스트 정리는 팀 리더(창업 경험자)가 담당했다.</p>
           `,
         },
         {
