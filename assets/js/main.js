@@ -12,7 +12,7 @@
   const PROJECT_DATA = {
     'sk-sandbox': {
       title: 'mySUNI LXP 로컬 내재화 (LMS SANDBOX)',
-      meta: 'SK 그룹 사내 학습 플랫폼 mySUNI · 약 20개 마이크로서비스 · 2026.02 PoC → 2026.03 실 운영 (약 3주)',
+      meta: 'SK 그룹 사내 학습 플랫폼 mySUNI · 20개 이상 마이크로서비스 · 2026.02 PoC → 2026.03 실 운영 (약 3주)',
       sections: [
         {
           heading: '문제 — 외주 개발 사이클이 AI 적용 속도의 병목',
@@ -31,9 +31,9 @@
           raw: true,
           body: `
             <ul>
-              <li><strong>1. 아키텍처 자체 분석 (Agent 팀 + 본인 정독 병행)</strong> — 인계 자료 거의 없는 상태에서 <strong>역할별 페르소나(Architecture Reviewer · Auth Flow Analyst · DB Schema Mapper 등)를 설계한 LLM 에이전트 팀</strong>이 약 20개 BE 마이크로서비스 + sku-shared 라이브러리를 분담 분석, 본인이 cross-check하며 아키텍처 맵·포트·DB 연결·인증 흐름을 자체 작성.</li>
+              <li><strong>1. 아키텍처 자체 분석 (Agent 팀 + 본인 정독 병행)</strong> — 인계 자료 거의 없는 상태에서 <strong>역할별 페르소나(Architecture Reviewer · Auth Flow Analyst · DB Schema Mapper 등)를 설계한 LLM 에이전트 팀</strong>이 20개 이상 BE 마이크로서비스 + sku-shared 라이브러리를 분담 분석, 본인이 cross-check하며 아키텍처 맵·포트·DB 연결·인증 흐름을 자체 작성.</li>
               <li><strong>2. 인프라 로컬화</strong> — MariaDB / MongoDB / Redis / Kafka / Zookeeper 를 Docker Compose 로 일괄 구성, DB 초기화 스크립트(SQL/JS)로 원클릭 기동 환경 구현 (DB 데이터 543MB 정착)</li>
-              <li><strong>3. 사내 의존성 해체</strong> — 약 20개 <code>build.gradle</code>에서 사내 Nexus 의존성 제거 → <code>mavenLocal() + mavenCentral()</code> 전환, 사설 Docker base image → <code>eclipse-temurin:17-jre</code> 교체, SuniID·FCM·AES 등 외부 의존성을 조건부 비활성화 / 로컬 모드 전환</li>
+              <li><strong>3. 사내 의존성 해체</strong> — 20개 이상 <code>build.gradle</code>에서 사내 Nexus 의존성 제거 → <code>mavenLocal() + mavenCentral()</code> 전환, 사설 Docker base image → <code>eclipse-temurin:17-jre</code> 교체, SuniID·FCM·AES 등 외부 의존성을 조건부 비활성화 / 로컬 모드 전환</li>
               <li><strong>4. 인증 체계 우회</strong> — K8s Envoy 사이드카 인증을 <strong>Vite proxy 기반 로컬 시뮬레이션</strong>으로 구현, ProfileManager 의 정확 일치 검사 이슈를 코드 추적으로 발견 → Spring profile 대신 시스템 프로퍼티 우회 방식 채택</li>
               <li><strong>5. 프론트 에셋 로컬화</strong> — STG CDN 의존 CSS / 이미지 / 폰트 1,083개 파일 로컬 이관, URL 일괄 치환으로 렌더링 정상화</li>
               <li><strong>6. 통합 기동 스크립트</strong> — <code>start-all.sh</code> (전체 마이크로서비스 일괄, 포트 8080~8100) / <code>start-bff.sh</code> · <code>start-learning.sh</code> (단독 디버깅용)</li>
@@ -45,7 +45,7 @@
           raw: true,
           body: `
             <ul>
-              <li>약 <strong>20개 마이크로서비스 전체 로컬 build/run</strong> 완료</li>
+              <li><strong>20개 이상 마이크로서비스 전체 로컬 build/run</strong> 완료</li>
               <li>BE <strong>35개 파일 수정 + 11개 신규</strong> / FE <strong>5개 파일 수정 + 1,083개 신규</strong></li>
               <li>DB 데이터 정착 <strong>543MB</strong> (MariaDB 232 + MongoDB 311)</li>
               <li>외주·VPN 의존 <strong>완전 단절</strong> → 팀 자체 dev cycle 확보</li>
@@ -2592,10 +2592,10 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
     const CARD_EN = {
       'sk-sandbox': {
         title: 'Enterprise LMS Platform Internalization (mySUNI LXP Sandbox)',
-        meta: 'SK Group internal learning platform · 19 microservices · Enterprise platform engineering',
+        meta: 'SK Group internal learning platform · 20+ microservices · Enterprise platform engineering',
         desc: '<strong>Enterprise Platform Engineering</strong> · Rebuilt a vendor operated learning platform into an internal development runtime, enabling faster AI feature delivery across backend, frontend, and platform services.',
         impacts: [
-          'Set up and ran 19 microservices locally across backend, frontend, and integration layers',
+          'Set up and ran 20+ microservices locally across backend, frontend, and integration layers',
           'Simulated Kubernetes/Envoy sidecar authentication through a Vite proxy for local development',
           'Reduced vendor and VPN dependency, improving internal development velocity and release readiness',
         ],
@@ -2868,7 +2868,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       ['.nav a[href="#projects"]', 'Projects'],
       ['.nav a[href="#skills"]', 'Skills'],
       ['.nav a[href="#opensource"]', 'OSS'],
-      ['.nav a[href="resume.html"]', 'Resume'],
+      ['.nav .resume-link', 'Resume'],
       ['.nav a[href="#contact"]', 'Contact'],
       ['#projects .section-head .count', 'Research Assistant · Sep 2025 to Mar 2026'],
       ['#experience .section-head .count', '5 roles · 2023 to Present'],
@@ -2961,7 +2961,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
         company: 'SK Innovation · mySUNI LX (Learning Experience) & Tech',
         desc: 'Worked on enterprise AI adoption for SK Group\'s internal learning platform, owning LLM workflow automation, agentic crawling, platform internalization, localization automation, and stakeholder ready reporting.',
         items: [
-          'Internalized a vendor handoff enterprise LMS codebase, running <strong>19 microservices locally</strong> and unblocking internal AI feature development',
+          'Internalized a vendor handoff enterprise LMS codebase, running <strong>20+ microservices locally</strong> and unblocking internal AI feature development',
           'Designed and built <strong>15+ LLM and agentic automation systems</strong>, including a Multi LLM Wrapper, AgenticCrawler, meeting summary automation, instructor agent, job skill ontology pipeline, HTML to Markdown conversion, and affiliate learning reports',
           'Built Korean to Japanese localization automation for RHQ: <strong>1,500+ video SRT files, 63 MHTML cubes, 12 domain glossary, and 286 STT correction patterns</strong>',
         ],
@@ -3112,6 +3112,12 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       btn.setAttribute('title', label);
     }
 
+    function updateResumeLink(lang) {
+      const link = document.querySelector('.resume-link');
+      if (!link) return;
+      link.setAttribute('href', lang === 'en' ? 'resume.html?lang=en' : 'resume.html');
+    }
+
     function getAwardsToggleLabel(isOpen) {
       return (window.PORTFOLIO_LANGUAGE || 'ko') === 'en'
         ? (isOpen ? 'Hide list ↑' : 'Show all 28 awards ↓')
@@ -3141,6 +3147,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
         awardsToggle.textContent = getAwardsToggleLabel(awardsList.classList.contains('open'));
       }
       setToggle(nextLang);
+      updateResumeLink(nextLang);
     }
 
     window.getPortfolioLanguage = () => window.PORTFOLIO_LANGUAGE || 'ko';
@@ -3154,7 +3161,8 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       });
     }
 
-    applyLanguage(localStorage.getItem(STORAGE_KEY) || 'ko');
+    const requestedLang = new URLSearchParams(window.location.search).get('lang');
+    applyLanguage(requestedLang || localStorage.getItem(STORAGE_KEY) || 'ko');
   })();
 
   // Hash routing — open modal on load if URL points to a project
@@ -3196,11 +3204,11 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
     google: { name: 'Google', certs: [
       { d: '2025.08', n: 'Google Analytics Certification (GAC, GA4)' },
     ]},
-    ksa: { name: '한국표준협회 · 엘리스', certs: [
-      { d: '2025.04', n: 'TOPA 1급 — Test of Practical Artificial Intelligence' },
+    ksa: { name: 'Korean Standards Association · Elice', certs: [
+      { d: '2025.04', n: 'TOPA Level 1 — Test of Practical Artificial Intelligence' },
     ]},
-    kdata: { name: '한국데이터산업진흥원', certs: [
-      { d: '2025.04', n: 'SQL 개발자' },
+    kdata: { name: 'Korea Data Agency', certs: [
+      { d: '2025.04', n: 'SQL Developer (SQLD)' },
     ]},
   };
 
