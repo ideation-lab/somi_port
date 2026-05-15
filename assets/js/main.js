@@ -3115,7 +3115,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
     function updateResumeLink(lang) {
       const link = document.querySelector('.resume-link');
       if (!link) return;
-      link.setAttribute('href', lang === 'en' ? 'resume.html?lang=en' : 'resume.html');
+      link.setAttribute('href', lang === 'en' ? 'resume-en.html?lang=en' : 'resume.html');
     }
 
     function getAwardsToggleLabel(isOpen) {
