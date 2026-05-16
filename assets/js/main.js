@@ -2868,7 +2868,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       ['.nav a[href="#projects"]', 'Projects'],
       ['.nav a[href="#skills"]', 'Skills'],
       ['.nav a[href="#opensource"]', 'OSS'],
-      ['.nav .resume-link', 'Resume'],
+      ['.nav .resume-link', 'Resume →'],
       ['.nav a[href="#contact"]', 'Contact'],
       ['#projects .section-head .count', 'Research Assistant · Sep 2025 to Mar 2026'],
       ['#experience .section-head .count', '5 roles · 2023 to Present'],
