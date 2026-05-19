@@ -2183,6 +2183,69 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
         { label: 'Upstream Repo', href: 'https://github.com/Inference-Engines/careflow' },
       ],
     },
+    'recallguard': {
+      title: 'RecallGuard AI',
+      meta: 'Microsoft Agent-a-Thon · Level 3 Master Track · Microsoft Foundry · Governed Multi-Agent Workflow',
+      sections: [
+        {
+          heading: 'Overview',
+          raw: true,
+          body: `
+            <p><strong>Governed multi-agent product safety review workspace built with Microsoft Foundry.</strong> RecallGuard AI는 marketplace/procurement/compliance 팀이 vendor product submission을 listing 전에 검토할 수 있도록 만든 reviewer console이다.</p>
+            <p>Vendor CSV를 불러오면 recall/certification evidence와 대조하고, 각 product row에 대해 <strong>APPROVE · REVIEW · HOLD</strong> 결정을 traceable하게 남긴다.</p>
+            <p><img src="assets/recallguard/console.webp" alt="RecallGuard AI reviewer console" class="modal-arch-image" loading="lazy" /></p>
+          `,
+        },
+        {
+          heading: 'Problem',
+          raw: true,
+          body: `
+            <p>Product safety review는 단순한 챗봇 답변으로 끝낼 수 없는 영역이다. Recall status, certification evidence, vendor-provided notes, reviewer decision이 모두 감사 가능한 형태로 남아야 한다.</p>
+            <ul>
+              <li>Vendor submissions can contain incomplete, misleading, or prompt-injection-like notes</li>
+              <li>Reviewers need deterministic checks and evidence, not only generated summaries</li>
+              <li>Risky rows should route to human review instead of being auto-approved</li>
+            </ul>
+          `,
+        },
+        {
+          heading: 'Solution — Governed multi-agent workflow',
+          raw: true,
+          body: `
+            <ul>
+              <li><strong>Knowledge Agent</strong> — policy and evidence grounding with Microsoft Foundry File Search / Azure AI Search style retrieval</li>
+              <li><strong>Task Agent</strong> — deterministic CSV checks using a Code Interpreter style execution path</li>
+              <li><strong>Sequential workflow</strong> — policy grounding first, task execution only when review is required</li>
+              <li><strong>Reviewer packet</strong> — decision, evidence, trace notes, and next action surfaced in the console</li>
+            </ul>
+            <p><img src="assets/recallguard/contact-sheet.webp" alt="RecallGuard AI deck contact sheet" class="modal-arch-image" loading="lazy" /></p>
+          `,
+        },
+        {
+          heading: 'Safety & Evaluation',
+          raw: true,
+          body: `
+            <ul>
+              <li><strong>Prompt injection guard</strong> — vendor notes are treated as untrusted data, not instructions</li>
+              <li><strong>HITL</strong> — REVIEW/HOLD rows are escalated instead of forced into approval</li>
+              <li><strong>Evaluation harness</strong> — 25 labeled vendor rows covering approval, review, recall, missing data, and prompt injection cases</li>
+              <li><strong>Governance notes</strong> — RBAC ownership, Entra Agent ID notes, trace monitor, and audit-ready output structure</li>
+            </ul>
+          `,
+        },
+        {
+          heading: 'Stack',
+          raw: true,
+          body: `
+            <p>Microsoft Foundry · Azure AI Search / File Search · Code Interpreter style task execution · Python 3.11 · Pytest · Playwright · local reviewer console · guardrails · HITL</p>
+          `,
+        },
+      ],
+      links: [
+        { label: 'GitHub Repository', href: 'https://github.com/1wos/RecallGuard-AI' },
+        { label: 'Microsoft Agent-a-Thon', href: 'https://www.microsoft.com/en-us/events/local-events/microsoft-agent-a-thon' },
+      ],
+    },
     'bridgecast': {
       title: 'BridgeCast AI',
       meta: 'Microsoft × Women in Cloud AI Innovation Challenge · Inclusive Communication Hub · March 2026 · 한국×대만 cross-border 팀',
@@ -2295,6 +2358,74 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
         { label: 'GitHub Repository', href: 'https://github.com/1wos/BridgeCastAI' },
         { label: 'Women in Cloud · AI Challenge', href: 'https://womenincloud.com/aichallenge/' },
         { label: 'Microsoft Innovation Challenge', href: 'https://innovationstudio.microsoft.com/hackathons/Innovation-Challenge-Spring-2025/home/executive_challenges' },
+      ],
+    },
+    'codequest-bob': {
+      title: 'CodeQuest Bob',
+      meta: 'IBM Bob Hackathon · Solo MVP · React/TypeScript/Three.js · watsonx.ai + Watson services',
+      sections: [
+        {
+          heading: 'Overview',
+          raw: true,
+          body: `
+            <p><strong>Others explain code. CodeQuest Bob grows developers.</strong> CodeQuest Bob은 낯선 GitHub repository를 repo scan, 성장 퀘스트, first PR package, developer passport로 바꾸는 gamified developer onboarding platform이다.</p>
+            <p>IBM Bob Hackathon에서 만든 solo MVP로, IBM Bob을 development partner로 활용해 planning, implementation, review, submission package까지 하나의 제품 흐름으로 완성했다.</p>
+            <p><img src="assets/codequest-bob/cover.webp" alt="CodeQuest Bob cover image" class="modal-arch-image" loading="lazy" /></p>
+          `,
+        },
+        {
+          heading: 'Problem',
+          raw: true,
+          body: `
+            <p>New contributors often lose momentum before their first meaningful PR because repository structure, setup steps, contribution norms, and missing documentation create too much friction.</p>
+            <ul>
+              <li>Contributors need a guided path, not only a README</li>
+              <li>Maintainers need better onboarding signals without creating custom tutorials for every newcomer</li>
+              <li>Developer growth should be visible as progress, skill gaps, and next actionable quests</li>
+            </ul>
+          `,
+        },
+        {
+          heading: 'Product Flow',
+          raw: true,
+          body: `
+            <ul>
+              <li><strong>Repository Intake</strong> — user submits a GitHub repository URL</li>
+              <li><strong>Live GitHub Scan</strong> — repository metadata, files, languages, and contribution signals are summarized</li>
+              <li><strong>Growth Quest Map</strong> — onboarding path becomes sequenced quests</li>
+              <li><strong>Skill Boost Radar</strong> — developer skills are mapped against repository demands</li>
+              <li><strong>First PR Package</strong> — next issue, setup guidance, and contribution checklist are bundled</li>
+              <li><strong>Developer Growth Passport</strong> — progress is framed as a visible learning journey</li>
+            </ul>
+            <p><img src="assets/codequest-bob/orbit.webp" alt="CodeQuest Bob 3D repository orbit map" class="modal-arch-image" loading="lazy" /></p>
+          `,
+        },
+        {
+          heading: 'IBM Ecosystem',
+          raw: true,
+          body: `
+            <ul>
+              <li><strong>IBM Bob</strong> — development partner for repository aware planning and iteration</li>
+              <li><strong>watsonx.ai / IBM Granite</strong> — AI reasoning layer for onboarding guidance</li>
+              <li><strong>Watson NLU</strong> — text signal extraction and repository understanding support</li>
+              <li><strong>Watson TTS/STT</strong> — voice briefing loop for accessible onboarding</li>
+              <li><strong>IBM Cloudant ready API route</strong> — persistence path prepared behind a Vercel serverless proxy</li>
+            </ul>
+            <p><img src="assets/codequest-bob/architecture.webp" alt="CodeQuest Bob architecture diagram" class="modal-arch-image" loading="lazy" /></p>
+          `,
+        },
+        {
+          heading: 'Stack',
+          raw: true,
+          body: `
+            <p>React · TypeScript · Vite · Three.js · React Three Fiber · Drei · IBM Bob · watsonx.ai / IBM Granite · Watson NLU · Watson TTS/STT · IBM Cloudant ready server route · Vercel serverless API proxy</p>
+          `,
+        },
+      ],
+      links: [
+        { label: 'Live Demo', href: 'https://codequest-bob.vercel.app' },
+        { label: 'GitHub Repository', href: 'https://github.com/1wos/CodeQuestBob' },
+        { label: 'IBM Bob Hackathon', href: 'https://lablab.ai/ai-hackathons/ibm-bob-hackathon' },
       ],
     },
     'yeongcheon': {
@@ -2660,6 +2791,16 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
           'Integrated Google ADK, Gemini, AlloyDB AI, MCP tool calls, Cloud Run, Cloud Build, IAM, Secret Manager, safety gates, and agent traces',
         ],
       },
+      recallguard: {
+        title: 'RecallGuard AI: Governed Product Safety Review Agent',
+        meta: 'Microsoft Agent-a-Thon · Level 3 Master Track · Microsoft Foundry',
+        desc: '<strong>AI Safety / Agent Workflow</strong> · A governed product safety review workspace that compares vendor CSV submissions against recall and certification evidence, then records APPROVE, REVIEW, or HOLD decisions.',
+        impacts: [
+          'Built a sequential Knowledge Agent and Task Agent workflow for policy grounding, deterministic CSV checks, and reviewer packet generation',
+          'Treated vendor prompt injection notes as untrusted data and routed REVIEW/HOLD cases to HITL review',
+          'Added a 25 row labeled evaluation harness, trace monitor, RBAC/Entra governance notes, and Playwright UI verification',
+        ],
+      },
       bridgecast: {
         title: 'BridgeCast AI: Multimodal Accessibility Communication System',
         meta: 'Microsoft x Women in Cloud AI Innovation Challenge · Cross border Korea and Taiwan team',
@@ -2668,6 +2809,16 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
           'Submitted to the Inclusive Communication Hub track with a cross border Korea and Taiwan team',
           'Integrated 15 Azure AI services including STT, GPT 4o, TTS, and Translator',
           'Designed simultaneous flows for speech to sign, sign to speech, and multilingual chat',
+        ],
+      },
+      'codequest-bob': {
+        title: 'CodeQuest Bob: IBM Bob Powered Developer Onboarding Platform',
+        meta: 'IBM Bob Hackathon · Solo MVP · React/TypeScript/Three.js · watsonx.ai and Watson services',
+        desc: '<strong>Developer Tool / AI Onboarding</strong> · A gamified onboarding platform that turns unfamiliar GitHub repositories into repository scans, growth quests, first PR packages, and developer growth passports.',
+        impacts: [
+          'Used IBM Bob as a development partner to complete repository aware MVP planning, implementation, review, and submission packaging',
+          'Built live GitHub scan, Skill Boost Radar, 3D Repository Orbit Map, First PR Package, and Developer Growth Passport flows',
+          'Integrated watsonx.ai/IBM Granite, Watson NLU, Watson TTS/STT, a Cloudant ready API route, and a Vercel serverless proxy',
         ],
       },
       shellter: {
