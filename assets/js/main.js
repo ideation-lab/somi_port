@@ -2524,16 +2524,12 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
     const sectionsHtml = cardCopy
       ? `
         <section class="modal-section">
-          <h3>Summary</h3>
+          <h3>Overview</h3>
           <p>${cardCopy.desc}</p>
         </section>
         <section class="modal-section">
           <h3>Key Contributions</h3>
           <ul>${cardCopy.impacts.map(item => `<li>${item}</li>`).join('')}</ul>
-        </section>
-        <section class="modal-section">
-          <h3>Note</h3>
-          <p class="placeholder">This English view is a recruiter friendly summary. The full Korean deep dive case study is preserved in the Korean version.</p>
         </section>
       `
       : data.sections.map(s => {
