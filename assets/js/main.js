@@ -3222,9 +3222,9 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       {
         role: 'Judge (Volunteer) · <a href="https://technovationchallenge.org/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Technovation Girls 2026 ↗</a>',
         company: 'Technovation Girls · Google Women Techmakers Partner Program',
-        desc: 'Judge for a global program where young women build AI and app based solutions for social problems, reviewing 2026 Quarterfinals submissions.',
+        desc: 'Judge for a global program where young women build AI and app based solutions for social problems. Completed the 2026 season as a Judge Gold with a Certificate of Recognition.',
         items: [
-          '<strong>2026 season Judge</strong> for Quarterfinals submission review',
+          '<strong>Judge Gold · Certificate of Recognition</strong> for reviewing 11+ technology projects in the 2026 season',
           'Part of a <strong>global judge pool</strong> in an official Google Women Techmakers partner program',
           'Evaluated AI/app prototypes across technical quality and social impact',
         ],
