@@ -46,7 +46,7 @@
     },
     'offduty': {
       title: 'Off-Duty — 멀티에이전트 AI 매장 매니저 (Vertex AI · MongoDB Atlas)',
-      meta: '글로벌 Google Cloud Rapid Agent Hackathon (MongoDB 트랙) 제출작 · <strong>시스템 전체 구현</strong>',
+      meta: '글로벌 Google Cloud Rapid Agent Hackathon (MongoDB 트랙) 제출작 · <strong>한국·인도 4인 글로벌 협업</strong> · 시스템 전체 구현',
       sections: [
         { heading: 'Overview', raw: true, body: `
           <p>점주가 자리를 비운 사이 에이전트가 매장을 운영하되, 모든 행동을 MongoDB에 증거로 남기는 멀티에이전트 시스템. Supervisor(Gemini 3 / Vertex AI)가 의도별로 하위 에이전트에 위임하고, 모든 액션을 trace_id로 감사 추적한다.</p>
@@ -2816,7 +2816,7 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       },
       'offduty': {
         title: 'Off-Duty: Multi-Agent AI Store Manager (Vertex AI · MongoDB Atlas)',
-        meta: 'Submission to the global Google Cloud Rapid Agent Hackathon (MongoDB track) · Built the full system',
+        meta: 'Submission to the global Google Cloud Rapid Agent Hackathon (MongoDB track) · Korea and India team of 4 · Built the full system',
         desc: '<strong>Multi-Agent</strong> · A supervisor (Gemini 3 on Vertex AI) delegates by intent to ordering, inventory, vision, and owner agents, logging every action with a trace_id for a full evidence trail.',
         impacts: [
           'Four-agent supervisor architecture: Gemini 3 / Vertex AI routes by intent to ordering, inventory, vision, and owner agents over MongoDB Atlas',
