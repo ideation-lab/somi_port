@@ -3301,7 +3301,10 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
       document.querySelectorAll('.project[data-project]').forEach(card => {
         const data = CARD_EN[card.dataset.project];
         if (!data) return;
-        setHtml(card.querySelector('.project-title'), data.title);
+        const titleEl = card.querySelector('.project-title');
+        const badgeEl = titleEl ? titleEl.querySelector('.global-badge') : null;
+        setHtml(titleEl, data.title);
+        if (badgeEl && titleEl) { titleEl.appendChild(document.createTextNode(' ')); titleEl.appendChild(badgeEl); }
         setHtml(card.querySelector('.project-meta'), data.meta);
         setHtml(card.querySelector('.project-desc'), data.desc);
         const items = card.querySelectorAll('.key-achievements li');
