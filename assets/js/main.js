@@ -2804,6 +2804,36 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
   (function() {
     const STORAGE_KEY = 'portfolio-language';
     const CARD_EN = {
+      'redditpulse': {
+        title: 'RedditPulse: Ontology GraphRAG Platform (Kubernetes · Multi-Cloud · MLOps)',
+        meta: 'Solo project · Reddit stock sentiment + FiQA finance news · Grew from 25 PRs to the OSS GraphRAG project seocho (OSSCA 2026) · Sole owner of design, build, and evaluation',
+        desc: '<strong>Cloud-Native GraphRAG</strong> · A grounded GraphRAG over a typed financial ontology that blocks ungrounded answers with a rule engine, shipped solo on an observability, GitOps, and multi-cloud IaC stack.',
+        impacts: [
+          'Self-defined eval: 98.8% citation faithfulness and 100% no-fabrication via a Symbolic Guard rule engine (valid/invalid/needs_review)',
+          'Improved retrieval with multi-provider rerank (Cohere/Upstage/Gemini/OpenAI): recall@3 66.7% to 100%, Cohere rerank MRR 0.49 to 0.83',
+          'Multi-cloud IaC + GitOps + observability: Terraform (AWS/GCP/Azure, plan-verified), Helm/ArgoCD, Kubernetes (kind), Prometheus/Grafana/Loki/Tempo (git-provable: 25 PRs, then a 5-day 37-commit rebuild)',
+        ],
+      },
+      'offduty': {
+        title: 'Off-Duty: Multi-Agent AI Store Manager (Vertex AI · MongoDB Atlas)',
+        meta: 'Google Cloud Rapid Agent Hackathon (MongoDB track) submission · Sole committer on the canonical repo 1wos/storeops (built the full system)',
+        desc: '<strong>Multi-Agent</strong> · A supervisor (Gemini 3 on Vertex AI) delegates by intent to ordering, inventory, vision, and owner agents, logging every action with a trace_id for a full evidence trail.',
+        impacts: [
+          'Four-agent supervisor architecture: Gemini 3 / Vertex AI routes by intent to ordering, inventory, vision, and owner agents over MongoDB Atlas',
+          'Full auditability: every read, write, and recommendation logged to agent_action_logs with a trace_id, behind a live read-only MongoDB MCP boundary',
+          'Passed 10/10 golden checks (routing, logging integrity, read-only boundary, vision-to-action) with Atlas Vector Search and shelf-photo vision; extended post-hackathon with a Three.js 3D layout advisor',
+        ],
+      },
+      'oceanus': {
+        title: 'Oceanus: GCP Water-Treatment Digital Twin (BigQuery-AI · Real-Data Backtest)',
+        meta: 'Google Gen AI Academy APAC Cohort 2 (Apr to Jul 2026) · Prototype · Role: AI and data core lead (18 git commits)',
+        desc: '<strong>Digital Twin</strong> · Early prediction and diagnosis of reverse-osmosis membrane fouling from a WaterTAP physics baseline, delivered as an advise-only decision-support system on GCP.',
+        impacts: [
+          'Backtested a fouling early-warning model against all 71 real cleaning (CIP) events from Orange County Water District (21 units, 2019 to 2021), not synthetic data',
+          'BigQuery-native AI: AI.FORECAST / AI.DETECT_ANOMALIES run in-SQL, with the Gemini Agent Platform reserved for orchestration only',
+          'WaterTAP 1.6 physics-deviation engine and delta-first economics, validated by 15 E2E QA checks and 12 honesty-invariant regression tests, on Cloud Run + Terraform',
+        ],
+      },
       'sk-sandbox': {
         title: 'Enterprise LMS Platform Internalization (mySUNI LXP Sandbox)',
         meta: 'SK Group internal learning platform · 20+ microservices · Enterprise platform engineering',
