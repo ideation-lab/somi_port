@@ -16,12 +16,14 @@
       sections: [
         { heading: 'Overview', raw: true, body: `
           <p>Reddit 소셜-금융 담론을 단순 키워드 네트워크가 아니라 <strong>queryable/explainable knowledge layer</strong>로 확장한 solo 프로젝트. 타입 온톨로지 위에서 "neural이 제안하고 symbolic이 검증"하는 grounded GraphRAG를, 관측성·GitOps·멀티클라우드 IaC까지 혼자 구성했다.</p>
+          <p><img src="assets/redditpulse/thumb.gif" alt="RedditPulse — ontology graph and GraphRAG panel (demo)" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '문제 & Ontology 설계', raw: true, body: `
           <p>객체·관계·액션·lineage를 포함한 Palantir식 typed ontology를 설계하고, HuggingFace FiQA 금융뉴스와 Reddit 주식 sentiment 데이터셋을 동일 ontology contract로 ingest되도록 구성했다.</p>
         ` },
         { heading: 'Grounded 파이프라인 & Symbolic Guard', raw: true, body: `
           <p>intent → subgraph → evidence → guard → answer 파이프라인으로 근거 기반 답변을 생성한다. Symbolic Guard 규칙 엔진이 후보를 valid/invalid/needs_review로 판정하고, graph evidence가 부족하면 partial/unsupported로 분리해 근거 없는 답변 생성을 차단한다(no-fabrication).</p>
+          <p><img src="assets/redditpulse/demo-light.gif" alt="RedditPulse — grounded GraphRAG answer with evidence (light mode)" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '검색 품질 실험 (자체 eval)', raw: true, body: `
           <ul>
@@ -50,15 +52,21 @@
       sections: [
         { heading: 'Overview', raw: true, body: `
           <p>점주가 자리를 비운 사이 에이전트가 매장을 운영하되, 모든 행동을 MongoDB에 증거로 남기는 멀티에이전트 시스템. Supervisor(Gemini 3 / Vertex AI)가 의도별로 하위 에이전트에 위임하고, 모든 액션을 trace_id로 감사 추적한다.</p>
+          <p><img src="assets/offduty/thumb.png" alt="Off-Duty owner ops console" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '멀티에이전트 오케스트레이션', raw: true, body: `
           <p>Supervisor가 키워드가 아닌 intent로 위임한다: ordering / inventory / vision / owner 에이전트가 MongoDB Atlas 위에서 동작한다.</p>
+          <p><img src="assets/offduty/mongodb-engine.png" alt="Live MongoDB aggregation pipeline and query plan" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '증거 트레일(trace_id) & read-only MCP', raw: true, body: `
           <p>모든 read/write/추천을 trace_id와 함께 agent_action_logs에 자동 기록해, 답변에서 원본 문서까지 이어지는 완전한 evidence trail을 구성했다. 조회는 라이브 read-only MongoDB MCP 서버로 경계를 분리했다.</p>
+          <p><img src="assets/offduty/evidence-trail.png" alt="Evidence drawer — trace any action back to MongoDB documents" class="modal-arch-image" loading="lazy" /></p>
+          <p><img src="assets/offduty/grounded-answer.png" alt="Grounding receipt — every answer links to its evidence" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: 'Vision & Review-to-Action', raw: true, body: `
           <p>선반 사진을 Gemini vision으로 읽어 MongoDB 상품과 매칭하고, 고객 리뷰를 Atlas Vector Search로 상품에 연결해 답변·액션으로 라우팅하는 Review-to-Action 파이프라인을 구현했다.</p>
+          <p><img src="assets/offduty/review-to-action.png" alt="Review-to-Action — classify a review, match via Atlas Vector Search, route an action" class="modal-arch-image" loading="lazy" /></p>
+          <p><img src="assets/offduty/customer-counter.png" alt="Customer counter — availability-grounded ordering" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '검증 (self-defined golden checks)', raw: true, body: `
           <p>위임 라우팅 · 로깅 무결성 · read-only 경계 · vision→action 흐름을 검증하는 golden check 10/10을 통과했다. (self-defined 체크)</p>
@@ -78,6 +86,7 @@
       sections: [
         { heading: 'Overview', raw: true, body: `
           <p>역삼투압(RO) 수처리 플랜트의 막오염을 조기 예측·진단하는 클라우드 네이티브 디지털 트윈. 본인은 물리 편차 엔진부터 예측·백테스트·서빙 API·QA까지 AI·데이터 코어를 담당했다(git 18 commits).</p>
+          <p><img src="assets/oceanus/thumb.png" alt="Oceanus digital twin — 2.5D fleet view" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '문제 & 실데이터', raw: true, body: `
           <p>Orange County Water District의 21개 막유닛(7 banks × 3 stages), 2019-01-01~2021-01-13 일별 데이터, 라벨링된 세정(CIP) 이벤트 71건을 사용했다. 합성 데이터가 아닌 실 운영 데이터.</p>
@@ -87,6 +96,7 @@
         ` },
         { heading: 'BigQuery-네이티브 예측 & 백테스트', raw: true, body: `
           <p>예측·이상탐지를 BigQuery 안에서 in-SQL로 수행한다(AI.FORECAST / AI.DETECT_ANOMALIES). 71개 CIP 이벤트 전부에 대해 리드타임 백테스트 + source attribution을 수행했다. Gemini Agent Platform은 오케스트레이션에만 사용해 데이터 플레인을 단일화했다.</p>
+          <p><img src="assets/oceanus/architecture.png" alt="Oceanus BigQuery-native AI architecture" class="modal-arch-image" loading="lazy" /></p>
         ` },
         { heading: '경제성 & advise-only 안전장치', raw: true, body: `
           <p>delta-first 경제성 모델(지금 세정 vs 대기 시 에너지 비용 vs CIP 비용)로 의사결정 근거를 제시한다. E2E QA 15건 + honesty-invariant 회귀 12건으로 advise-only 어시스턴트가 조언 경계를 넘지 않음을 검증했다.</p>
