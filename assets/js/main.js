@@ -71,12 +71,17 @@
         { heading: '검증 (self-defined golden checks)', raw: true, body: `
           <p>위임 라우팅 · 로깅 무결성 · read-only 경계 · vision→action 흐름을 검증하는 golden check 10/10을 통과했다. (self-defined 체크)</p>
         ` },
-        { heading: '해커톤 이후 개인 확장', raw: true, body: `
-          <p>해커톤 종료 후 개인적으로 3D Store Layout Advisor(Three.js) 머천다이징/플래노그램 최적화 도구와 solver를 추가했다.</p>
+        { heading: '해커톤 이후 — 본인 단독 고도화: 머천다이징 시뮬레이터', raw: true, body: `
+          <p><strong>여기부터는 4인 해커톤이 아니라 본인이 단독으로 이어서 만든 고도화입니다.</strong> 같은 storeops 코드베이스 위에, 점주가 <em>매대를 옮기기 전에</em> 3D로 배치를 시뮬레이션하고 <strong>0–100 머천다이징 정렬 점수</strong>를 받아보는 도구(Three.js, <code>layout3d.html</code>)를 추가했다.</p>
+          <p><img src="assets/offduty/merch-simulator.png" alt="Evidence-grounded 3D merchandising simulator — 0-100 alignment score with a 'Why this score?' drawer" class="modal-arch-image" loading="lazy" /></p>
+          <p>점수의 <strong>모든 항목이 실제 소비자심리·리테일 연구에 연결</strong>된다 — 눈높이 진열(Drèze 1994 / Chandon 2009), 엔드캡 리프트(Nakamura 2014), 계산대 충동구매(Ejlerskov 2018), 상품 인접성(Bezawada 2009), 페이싱(Eisend 2014), 입구 노출(Otterbring 2018, "감압 구간" 통설을 반박). "Why this score?" 드로어가 점수를 규칙별 기여로 분해하고, 각 계수에 <strong>신뢰도 배지</strong>와 근거 논문을 붙인다.</p>
+          <p><strong>정직성:</strong> 매출(₩/$)은 예측하지 않는다 — 정직한 연구는 방향성 효과만 주고 불확실성이 크므로 매장별 매출 숫자는 거짓 정밀도다. 이건 판매 모델이 아니라 <em>정렬 지수</em>다. 계수 민감도 밴드(±5)로 결론이 계수에 얼마나 흔들리는지도 함께 보여준다.</p>
+          <p><strong>검증:</strong> UI와 검증기가 <em>같은 <code>model.js</code></em>를 import 하므로 검증한 것이 그대로 배포된다. <code>npm run verify</code> → 1,360개 속성 시행 + 기하 증명(가구 겹침 0 · 진열대 관통 0 · 동선 클리핑 0). 근거 기반 쇼퍼 동선(Hui 2013 / Larson 2005)은 점수에서 분리해 "방향성일 뿐, 캘리브레이션 아님"으로 라벨링했다.</p>
         ` },
       ],
       links: [
         { label: 'GitHub — storeops (canonical)', href: 'https://github.com/1wos/storeops' },
+        { label: '머천다이징 시뮬레이터 — 상세 문서', href: 'https://github.com/1wos/storeops/blob/main/app/static/merch/README.md' },
         { label: 'Hackathon — Google Cloud Rapid Agent', href: 'https://rapid-agent.devpost.com/' },
       ],
     },
@@ -2831,7 +2836,8 @@ OptimizeSEO → GenerateImages → ConvertToHTML → END</code></pre>
         impacts: [
           'Four-agent supervisor architecture: Gemini 3 / Vertex AI routes by intent to ordering, inventory, vision, and owner agents over MongoDB Atlas',
           'Full auditability: every read, write, and recommendation logged to agent_action_logs with a trace_id, behind a live read-only MongoDB MCP boundary',
-          'Passed 10/10 golden checks (routing, logging integrity, read-only boundary, vision-to-action) with Atlas Vector Search and shelf-photo vision; extended post-hackathon with a Three.js 3D layout advisor',
+          'Passed 10/10 golden checks (routing, logging integrity, read-only boundary, vision-to-action) with Atlas Vector Search and shelf-photo vision',
+          'Solo, post-hackathon: added an evidence-grounded 3D merchandising simulator (Three.js) — a 0–100 alignment score where every point traces to a cited retail study, refuses to predict revenue, and ships behind 1,360 property trials + geometry proofs (UI and verifier share one model.js)',
         ],
       },
       'oceanus': {
