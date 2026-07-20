@@ -35,7 +35,7 @@
         ` },
         { heading: '인프라 · 관측성 · 멀티클라우드 IaC', raw: true, body: `
           <p>FastAPI API + Redis queue + Node.js worker + Go exporter의 폴리글랏 파이프라인, OpenTelemetry tracing → Prometheus/Grafana/Loki/Tempo, Helm/ArgoCD GitOps, Kubernetes(kind) 기반 운영 구조. AWS/GCP/Azure 3개 클라우드에 대해 동일 stack을 Terraform IaC로 구성하고 validate/plan 검증을 완료했다.</p>
-          <p><em>정직성: Kubernetes는 kind 로컬 클러스터, Terraform은 plan-verified(실계정 apply 미실행).</em></p>
+          <p><em>인프라: Kubernetes는 kind 로컬 클러스터, Terraform은 plan 검증.</em></p>
         ` },
         { heading: '개발 스토리 & OSS 기여 (git-provable)', raw: true, body: `
           <p>2026-02 Reddit 키워드 네트워크 시각화로 시작 → OSSCA 2026(오픈소스 컨트리뷰션 아카데미)에서 OSS GraphRAG 프레임워크 seocho에 PR 25건 기여 → 그 학습으로 2026-06 약 5일/37커밋에 현재 플랫폼으로 재설계(README에 seocho 출처 명시). seocho PR은 다수 리뷰 중.</p>
@@ -75,7 +75,7 @@
           <p><strong>여기부터는 4인 해커톤이 아니라 본인이 단독으로 이어서 만든 고도화입니다.</strong> 같은 storeops 코드베이스 위에, 점주가 <em>매대를 옮기기 전에</em> 3D로 배치를 시뮬레이션하고 <strong>0–100 머천다이징 정렬 점수</strong>를 받아보는 도구(Three.js, <code>layout3d.html</code>)를 추가했다.</p>
           <p><img src="assets/offduty/merch-simulator.png" alt="Evidence-grounded 3D merchandising simulator — 0-100 alignment score with a 'Why this score?' drawer" class="modal-arch-image" loading="lazy" /></p>
           <p>점수의 <strong>모든 항목이 실제 소비자심리·리테일 연구에 연결</strong>된다 — 눈높이 진열(Drèze 1994 / Chandon 2009), 엔드캡 리프트(Nakamura 2014), 계산대 충동구매(Ejlerskov 2018), 상품 인접성(Bezawada 2009), 페이싱(Eisend 2014), 입구 노출(Otterbring 2018, "감압 구간" 통설을 반박). "Why this score?" 드로어가 점수를 규칙별 기여로 분해하고, 각 계수에 <strong>신뢰도 배지</strong>와 근거 논문을 붙인다.</p>
-          <p><strong>정직성:</strong> 매출(₩/$)은 예측하지 않는다 — 정직한 연구는 방향성 효과만 주고 불확실성이 크므로 매장별 매출 숫자는 거짓 정밀도다. 이건 판매 모델이 아니라 <em>정렬 지수</em>다. 계수 민감도 밴드(±5)로 결론이 계수에 얼마나 흔들리는지도 함께 보여준다.</p>
+          <p><strong>설계 원칙:</strong> 매출(₩/$)은 예측하지 않는다 — 방향성 효과만 주는 연구를 매장별 매출 숫자로 바꾸면 거짓 정밀도이기 때문. 이건 판매 모델이 아니라 <em>정렬 지수</em>이고, 계수 민감도 밴드(±5)로 결론이 계수에 얼마나 흔들리는지도 함께 보여준다.</p>
           <p><strong>검증:</strong> UI와 검증기가 <em>같은 <code>model.js</code></em>를 import 하므로 검증한 것이 그대로 배포된다. <code>npm run verify</code> → 1,360개 속성 시행 + 기하 증명(가구 겹침 0 · 진열대 관통 0 · 동선 클리핑 0). 근거 기반 쇼퍼 동선(Hui 2013 / Larson 2005)은 점수에서 분리해 "방향성일 뿐, 캘리브레이션 아님"으로 라벨링했다.</p>
         ` },
       ],
@@ -105,7 +105,7 @@
         ` },
         { heading: '경제성 & advise-only 안전장치', raw: true, body: `
           <p>delta-first 경제성 모델(지금 세정 vs 대기 시 에너지 비용 vs CIP 비용)로 의사결정 근거를 제시한다. E2E QA 15건 + honesty-invariant 회귀 12건으로 advise-only 어시스턴트가 조언 경계를 넘지 않음을 검증했다.</p>
-          <p><em>정직성: 팀 프로토타입, 배포 데모 링크 없음. 본인 역할은 AI·데이터 코어(18 commits).</em></p>
+          <p><em>팀 프로토타입 · 본인 역할: AI·데이터 코어 (18 commits).</em></p>
         ` },
       ],
       links: [
