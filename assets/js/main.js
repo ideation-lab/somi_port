@@ -15,29 +15,29 @@
       meta: '개인 프로젝트 (SOLO) · Reddit 주식심리 + FiQA · <strong>OSSCA 2026 OSS GraphRAG(seocho) 25 PR 기여에서 출발</strong> · 설계·구현·평가 단독',
       sections: [
         { heading: 'Overview', raw: true, body: `
-          <p>Reddit 소셜-금융 담론을 단순 키워드 네트워크가 아니라 <strong>queryable/explainable knowledge layer</strong>로 확장한 solo 프로젝트. 타입 온톨로지 위에서 "neural이 제안하고 symbolic이 검증"하는 grounded GraphRAG를, 관측성·GitOps·멀티클라우드 IaC까지 혼자 구성했다.</p>
+          <p>Reddit의 주식·금융 수다는 정보는 많은데 근거가 없다 — 그럴듯한 답을 지어내기 딱 좋은 환경이다. RedditPulse는 그 담론을 "질문하면 근거를 대고 답하는" 지식 레이어로 바꾼 solo 프로젝트다. 타입 온톨로지 위에서 neural이 답을 제안하면 symbolic이 검증하는 GraphRAG를, 관측성·GitOps·멀티클라우드 IaC까지 혼자 붙였다.</p>
           <p><img src="assets/redditpulse/thumb.gif" alt="RedditPulse — ontology graph and GraphRAG panel (demo)" class="modal-arch-image" loading="lazy" /></p>
         ` },
-        { heading: '문제 & Ontology 설계', raw: true, body: `
-          <p>객체·관계·액션·lineage를 포함한 Palantir식 typed ontology를 설계하고, HuggingFace FiQA 금융뉴스와 Reddit 주식 sentiment 데이터셋을 동일 ontology contract로 ingest되도록 구성했다.</p>
+        { heading: '키워드 그래프에서 온톨로지로', raw: true, body: `
+          <p>처음엔 단순 키워드 네트워크였다. 근데 그걸론 "왜 이게 답인지"를 못 댄다. 그래서 객체·관계·액션·lineage를 가진 Palantir식 typed ontology로 다시 설계하고, HuggingFace FiQA 금융뉴스와 Reddit 주식 sentiment를 같은 ontology contract로 밀어넣었다.</p>
         ` },
-        { heading: 'Grounded 파이프라인 & Symbolic Guard', raw: true, body: `
-          <p>intent → subgraph → evidence → guard → answer 파이프라인으로 근거 기반 답변을 생성한다. Symbolic Guard 규칙 엔진이 후보를 valid/invalid/needs_review로 판정하고, graph evidence가 부족하면 partial/unsupported로 분리해 근거 없는 답변 생성을 차단한다(no-fabrication).</p>
+        { heading: 'neural이 제안하고, symbolic이 검증한다', raw: true, body: `
+          <p>intent → subgraph → evidence → guard → answer 파이프라인이다. LLM이 후보를 내면 Symbolic Guard 규칙 엔진이 valid/invalid/needs_review로 판정하고, 그래프 근거가 부족하면 partial/unsupported로 빼버린다. "모르면 모른다고 한다"를 시스템으로 박은 것.</p>
           <p><img src="assets/redditpulse/demo-light.gif" alt="RedditPulse — grounded GraphRAG answer with evidence (light mode)" class="modal-arch-image" loading="lazy" /></p>
         ` },
-        { heading: '검색 품질 실험 (자체 eval)', raw: true, body: `
+        { heading: '진짜 나아졌는지 숫자로 재봤다', raw: true, body: `
           <ul>
             <li>Citation faithfulness <strong>98.8%</strong>, no-fabrication <strong>100%</strong></li>
             <li>paraphrase recall@3 <strong>66.7% → 100%</strong></li>
             <li>Cohere rerank MRR <strong>0.49 → 0.83</strong></li>
           </ul>
-          <p>Cohere/Upstage/Gemini/OpenAI embedding·reranking provider abstraction을 구성하고 retrieval 품질을 정량 평가했다. (수치는 자체 eval 기준)</p>
+          <p>임베딩·리랭킹은 Cohere/Upstage/Gemini/OpenAI를 provider abstraction 뒤에 두고 정량 비교했다. 자작 golden set N=19(ISO-704 competency question·adversarial 질문 포함) 기준이고, citation faithfulness는 human-judged가 아닌 proxy 지표다 — 작은 셋이라는 것도 그대로 밝혀둔다.</p>
         ` },
         { heading: '인프라 · 관측성 · 멀티클라우드 IaC', raw: true, body: `
           <p>FastAPI API + Redis queue + Node.js worker + Go exporter의 폴리글랏 파이프라인, OpenTelemetry tracing → Prometheus/Grafana/Loki/Tempo, Helm/ArgoCD GitOps, Kubernetes(kind) 기반 운영 구조. AWS/GCP/Azure 3개 클라우드에 대해 동일 stack을 Terraform IaC로 구성하고 validate/plan 검증을 완료했다.</p>
           <p><em>인프라: Kubernetes는 kind 로컬 클러스터, Terraform은 plan 검증.</em></p>
         ` },
-        { heading: '개발 스토리 & OSS 기여 (git-provable)', raw: true, body: `
+        { heading: '어떻게 여기까지 왔나', raw: true, body: `
           <p>2026-02 Reddit 키워드 네트워크 시각화로 시작 → OSSCA 2026(오픈소스 컨트리뷰션 아카데미)에서 OSS GraphRAG 프레임워크 seocho에 PR 25건 기여 → 그 학습으로 2026-06 약 5일/37커밋에 현재 플랫폼으로 재설계(README에 seocho 출처 명시). seocho PR은 다수 리뷰 중.</p>
         ` },
       ],
@@ -72,10 +72,10 @@
           <p>위임 라우팅 · 로깅 무결성 · read-only 경계 · vision→action 흐름을 검증하는 golden check 10/10을 통과했다. (self-defined 체크)</p>
         ` },
         { heading: '해커톤 이후 — 본인 단독 고도화: 머천다이징 시뮬레이터', raw: true, body: `
-          <p><strong>여기부터는 4인 해커톤이 아니라 본인이 단독으로 이어서 만든 고도화입니다.</strong> 같은 storeops 코드베이스 위에, 점주가 <em>매대를 옮기기 전에</em> 3D로 배치를 시뮬레이션하고 <strong>0–100 머천다이징 정렬 점수</strong>를 받아보는 도구(Three.js, <code>layout3d.html</code>)를 추가했다.</p>
+          <p>해커톤은 4인 팀이었지만, 여기부터는 혼자 이어서 만들었다. 같은 storeops 코드베이스 위에, 점주가 <em>매대를 옮기기 전에</em> 3D로 배치를 미리 시뮬레이션하고 <strong>0–100 정렬 점수</strong>를 받아보는 도구(Three.js, <code>layout3d.html</code>)를 붙였다.</p>
           <p><img src="assets/offduty/merch-simulator.png" alt="Evidence-grounded 3D merchandising simulator — 0-100 alignment score with a 'Why this score?' drawer" class="modal-arch-image" loading="lazy" /></p>
           <p>점수의 <strong>모든 항목이 실제 소비자심리·리테일 연구에 연결</strong>된다 — 눈높이 진열(Drèze 1994 / Chandon 2009), 엔드캡 리프트(Nakamura 2014), 계산대 충동구매(Ejlerskov 2018), 상품 인접성(Bezawada 2009), 페이싱(Eisend 2014), 입구 노출(Otterbring 2018, "감압 구간" 통설을 반박). "Why this score?" 드로어가 점수를 규칙별 기여로 분해하고, 각 계수에 <strong>신뢰도 배지</strong>와 근거 논문을 붙인다.</p>
-          <p><strong>설계 원칙:</strong> 매출(₩/$)은 예측하지 않는다 — 방향성 효과만 주는 연구를 매장별 매출 숫자로 바꾸면 거짓 정밀도이기 때문. 이건 판매 모델이 아니라 <em>정렬 지수</em>이고, 계수 민감도 밴드(±5)로 결론이 계수에 얼마나 흔들리는지도 함께 보여준다.</p>
+          <p>점수는 전부 실제 연구에 연결했지만, <strong>매출(₩)은 일부러 예측하지 않았다.</strong> 연구는 방향만 알려주지 매장별 매출 숫자를 주지 않는다 — 그걸 지어내면 거짓 정밀도니까. 이건 판매 모델이 아니라 <em>정렬 지수</em>이고, 계수 민감도 밴드(±5)로 결론이 계수에 얼마나 흔들리는지까지 같이 보여준다.</p>
           <p><strong>검증:</strong> UI와 검증기가 <em>같은 <code>model.js</code></em>를 import 하므로 검증한 것이 그대로 배포된다. <code>npm run verify</code> → 1,360개 속성 시행 + 기하 증명(가구 겹침 0 · 진열대 관통 0 · 동선 클리핑 0). 근거 기반 쇼퍼 동선(Hui 2013 / Larson 2005)은 점수에서 분리해 "방향성일 뿐, 캘리브레이션 아님"으로 라벨링했다.</p>
         ` },
       ],
@@ -90,21 +90,21 @@
       meta: 'Google Gen AI Academy APAC <strong>Cohort 2</strong> (2026.04–07) · 프로토타입 · 본인 역할: <strong>AI·데이터 코어 리드 (git 18 commits)</strong>',
       sections: [
         { heading: 'Overview', raw: true, body: `
-          <p>역삼투압(RO) 수처리 플랜트의 막오염을 조기 예측·진단하는 클라우드 네이티브 디지털 트윈. 본인은 물리 편차 엔진부터 예측·백테스트·서빙 API·QA까지 AI·데이터 코어를 담당했다(git 18 commits).</p>
+          <p>역삼투압(RO) 수처리 플랜트는 막이 서서히 오염되다 어느 순간 성능이 훅 꺾인다. 관건은 "언제 세정하느냐"인데 — 너무 이르면 돈 낭비, 너무 늦으면 플랜트가 선다. Oceanus는 그 타이밍을 실 운영 데이터로 미리 잡아주는 클라우드 네이티브 디지털 트윈이다. 나는 물리 편차 엔진부터 예측·백테스트·서빙 API·QA까지 AI·데이터 코어를 맡았다(18 commits).</p>
           <p><img src="assets/oceanus/thumb.png" alt="Oceanus digital twin — 2.5D fleet view" class="modal-arch-image" loading="lazy" /></p>
         ` },
-        { heading: '문제 & 실데이터', raw: true, body: `
-          <p>Orange County Water District의 21개 막유닛(7 banks × 3 stages), 2019-01-01~2021-01-13 일별 데이터, 라벨링된 세정(CIP) 이벤트 71건을 사용했다. 합성 데이터가 아닌 실 운영 데이터.</p>
+        { heading: '실데이터에 집착한 이유', raw: true, body: `
+          <p>합성 데이터로 그럴듯한 그래프 만드는 건 쉽다. 그게 싫어서 처음부터 진짜 현장 데이터만 썼다 — Orange County Water District의 21개 막유닛(7 banks × 3 stages), 2019~2021 일별 기록, 라벨링된 세정(CIP) 이벤트 71건. "진짜 운영에서 통하는가"가 첫 기준이었다.</p>
         ` },
-        { heading: '물리 편차 엔진 (WaterTAP)', raw: true, body: `
-          <p>WaterTAP 1.6 high-fidelity 물리 baseline 대비 실측 편차를 산출하는 physics-deviation 엔진을 구축했다.</p>
+        { heading: '물리를 기준선으로, 편차를 신호로', raw: true, body: `
+          <p>데이터에 모델을 곧장 때려박는 대신, WaterTAP 1.6 물리 시뮬레이션을 baseline으로 깔고 "실측이 물리에서 얼마나 벗어나는가"를 오염 신호로 잡았다. 이상은 결국 편차니까.</p>
         ` },
         { heading: 'BigQuery-네이티브 예측 & 백테스트', raw: true, body: `
-          <p>예측·이상탐지를 BigQuery 안에서 in-SQL로 수행한다(AI.FORECAST / AI.DETECT_ANOMALIES). 71개 CIP 이벤트 전부에 대해 리드타임 백테스트 + source attribution을 수행했다. Gemini Agent Platform은 오케스트레이션에만 사용해 데이터 플레인을 단일화했다.</p>
+          <p>예측·이상탐지를 밖으로 빼지 않고 BigQuery 안에서 in-SQL(AI.FORECAST / AI.DETECT_ANOMALIES)로 돌렸다 — 데이터 플레인을 하나로 두려고. 71개 세정 이벤트 전부에 대해 "얼마나 미리 경고했나" 리드타임 백테스트 + source attribution까지 했다. Gemini는 오케스트레이션에만 썼다.</p>
           <p><img src="assets/oceanus/architecture.png" alt="Oceanus BigQuery-native AI architecture" class="modal-arch-image" loading="lazy" /></p>
         ` },
-        { heading: '경제성 & advise-only 안전장치', raw: true, body: `
-          <p>delta-first 경제성 모델(지금 세정 vs 대기 시 에너지 비용 vs CIP 비용)로 의사결정 근거를 제시한다. E2E QA 15건 + honesty-invariant 회귀 12건으로 advise-only 어시스턴트가 조언 경계를 넘지 않음을 검증했다.</p>
+        { heading: '조언은 하되, 결정은 넘기지 않는다', raw: true, body: `
+          <p>지금 세정 vs 대기했을 때 드는 에너지·CIP 비용을 delta로 비교해 판단 근거를 준다. 대신 어디까지나 advise-only — 어시스턴트가 조언 경계를 넘지 않는지 E2E QA 15건 + honesty 회귀 12건으로 계속 확인했다.</p>
           <p><em>팀 프로토타입 · 본인 역할: AI·데이터 코어 (18 commits).</em></p>
         ` },
       ],
