@@ -71,8 +71,8 @@
         { heading: '검증 (self-defined golden checks)', raw: true, body: `
           <p>위임 라우팅 · 로깅 무결성 · read-only 경계 · vision→action 흐름을 검증하는 golden check 10/10을 통과했다. (self-defined 체크)</p>
         ` },
-        { heading: '해커톤 이후 — 본인 단독 고도화: 머천다이징 시뮬레이터', raw: true, body: `
-          <p>해커톤은 4인 팀이었지만, 여기부터는 혼자 이어서 만들었다. 같은 storeops 코드베이스 위에, 점주가 <em>매대를 옮기기 전에</em> 3D로 배치를 미리 시뮬레이션하고 <strong>0–100 정렬 점수</strong>를 받아보는 도구(Three.js, <code>layout3d.html</code>)를 붙였다.</p>
+        { heading: '해커톤 이후 — 머천다이징 시뮬레이터 추가', raw: true, body: `
+          <p>해커톤이 끝난 뒤, 같은 storeops 코드베이스에 머천다이징 시뮬레이터를 하나 더 만들어 붙였다. 점주가 <em>매대를 옮기기 전에</em> 3D로 배치를 미리 돌려보고 <strong>0–100 정렬 점수</strong>를 받아보는 도구(Three.js, <code>layout3d.html</code>)다.</p>
           <p><img src="assets/offduty/merch-simulator.png" alt="Evidence-grounded 3D merchandising simulator — 0-100 alignment score with a 'Why this score?' drawer" class="modal-arch-image" loading="lazy" /></p>
           <p>점수의 <strong>모든 항목이 실제 소비자심리·리테일 연구에 연결</strong>된다 — 눈높이 진열(Drèze 1994 / Chandon 2009), 엔드캡 리프트(Nakamura 2014), 계산대 충동구매(Ejlerskov 2018), 상품 인접성(Bezawada 2009), 페이싱(Eisend 2014), 입구 노출(Otterbring 2018, "감압 구간" 통설을 반박). "Why this score?" 드로어가 점수를 규칙별 기여로 분해하고, 각 계수에 <strong>신뢰도 배지</strong>와 근거 논문을 붙인다.</p>
           <p>점수는 전부 실제 연구에 연결했지만, <strong>매출(₩)은 일부러 예측하지 않았다.</strong> 연구는 방향만 알려주지 매장별 매출 숫자를 주지 않는다 — 그걸 지어내면 거짓 정밀도니까. 이건 판매 모델이 아니라 <em>정렬 지수</em>이고, 계수 민감도 밴드(±5)로 결론이 계수에 얼마나 흔들리는지까지 같이 보여준다.</p>
